@@ -1,0 +1,4 @@
+interface:
+  display_name: "硕士论文 Origin 作图"
+  short_description: "调用本机 Origin 2026，生成可编辑工程和统一版式的硕士论文数据图"
+  default_prompt: "使用 $markov-thesis-origin-figures 按论文现行统计口径和600 dpi规范绘制指定图，回开工程并检查图面。"

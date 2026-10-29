@@ -1,0 +1,13 @@
+condition,repeat,scenario,score,unit,complete
+A,1,S1,10,unit,yes
+A,1,S2,12,unit,yes
+A,2,S1,12,unit,yes
+A,2,S2,14,unit,yes
+A,3,S1,14,unit,yes
+A,3,S2,16,unit,yes
+B,1,S1,9,unit,yes
+B,1,S2,11,unit,yes
+B,2,S1,10,unit,yes
+B,2,S2,12,unit,yes
+B,3,S1,11,unit,yes
+B,3,S2,13,unit,yes
