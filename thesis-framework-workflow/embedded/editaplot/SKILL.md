@@ -5,6 +5,10 @@ description: Analyze local scientific CSV, TXT, XLS, or XLSX data; recommend pub
 
 # EditaPlot
 
+## Embedded thesis workflow integration
+
+When used inside this thesis workflow package, read [the integration note](references/thesis-waterfall-integration.md) first. The adjacent `runtime/src` and `runtime/templates` are included, so no original-author repository or global skill installation is required. Python dependencies and the Origin application remain external. The package's manifest waterfall route reuses this backend's isolated session, queue and readback checks, with its own documented data contract and output formats. Preserve template-specific semantic gates for catalog routes. The complete-repository setup guidance below applies to standalone upstream installation, not as a prerequisite for this bundled workflow.
+
 Turn a scientific question and a read-only table into an auditable, editable Origin figure. Keep
 the beginner experience conversational; use the deterministic engine for inspection, planning,
 rendering, exporting, and readback.

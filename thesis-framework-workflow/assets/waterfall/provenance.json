@@ -1,0 +1,9 @@
+{
+  "data": "../../examples/waterfall/manifest.json",
+  "synthetic": true,
+  "renderer": "../../scripts/render_waterfall.py",
+  "software": "Origin 2026",
+  "contains_original_research_data": false,
+  "contains_desktop_screenshot": false,
+  "label_detail": "crop of synthetic preview"
+}

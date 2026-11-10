@@ -1,3 +1,3 @@
 # Project Rules
 
-Follow `%USERPROFILE%/AGENTS.md` and the enclosing project's AGENTS.md. Embedded skill files are reference snapshots. Current user instructions, current project rules, and the root SKILL.md control their use.
+Follow the current host and enclosing project rules when present, and this package's root SKILL.md. No original-author global rule file or home directory is required. Embedded instructions are subordinate to the current user request and package routing. Keep paths relative, use synthetic examples, and exclude private identifiers from shared instructions and diagnostics.

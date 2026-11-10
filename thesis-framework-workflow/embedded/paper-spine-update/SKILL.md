@@ -3,6 +3,9 @@ name: paper-spine-update
 description: Checks and updates PaperSpine from GitHub while preserving global config; use for upgrades, latest-version checks, or local reinstall.
 ---
 
+> 包内调用：本入口按需使用，核心方法见 [主技能](../../SKILL.md)。路径以当前技能包为基准，同级内嵌模块从相邻目录解析，不要求安装到全局 skills。旧文档中的全局安装命令不是本包的前置步骤。当前主机能力与未执行项按 [兼容说明](../../references/portability.md) 记录。
+
+
 # PaperSpine Update
 
 Use this skill when the user asks to update PaperSpine, check whether

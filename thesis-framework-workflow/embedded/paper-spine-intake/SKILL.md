@@ -3,6 +3,9 @@ name: paper-spine-intake
 description: Collects PaperSpine workflow options and writes config for flash/pro, scene, language, and inputs. (internal /paperspine step)
 ---
 
+> 包内调用：本入口按需使用，核心方法见 [主技能](../../SKILL.md)。路径以当前技能包为基准，同级内嵌模块从相邻目录解析，不要求安装到全局 skills。旧文档中的全局安装命令不是本包的前置步骤。当前主机能力与未执行项按 [兼容说明](../../references/portability.md) 记录。
+
+
 # PaperSpine Intake
 
 Use this skill before substantive PaperSpine work when the workflow is not yet
@@ -71,9 +74,9 @@ by its absolute installed path (never a path relative to the project directory):
 # user's project folder, where `scripts/` does not exist, so a relative path is
 # the most common reason the UI window never opens. Resolve the install dir:
 $launcher = @(
-  "$env:USERPROFILE\.codex\skills\paper-spine-ui\scripts\launch_paperspine_ui.ps1",
+  ".\embedded\paper-spine-intake\scripts\launch_paperspine_ui.ps1",
   "$env:USERPROFILE\.claude\skills\paper-spine-ui\scripts\launch_paperspine_ui.ps1",
-  "$env:USERPROFILE\.codex\skills\paper-spine-intake\scripts\launch_paperspine_ui.ps1",
+  ".\embedded\paper-spine-intake\scripts\launch_paperspine_ui.ps1",
   "$env:USERPROFILE\.claude\skills\paper-spine-intake\scripts\launch_paperspine_ui.ps1"
 ) | Where-Object { Test-Path $_ } | Select-Object -First 1
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File $launcher -OutputDir paper_rewriting_output
@@ -83,7 +86,7 @@ This opens a separate interactive PowerShell window. For a user-run terminal,
 this direct command is also supported:
 
 ```bash
-WIZARD="$HOME/.codex/skills/paper-spine-ui/scripts/intake_wizard.py"
+WIZARD="./embedded/paper-spine-intake/scripts/intake_wizard.py"
 [ -f "$WIZARD" ] || WIZARD="$HOME/.claude/skills/paper-spine-ui/scripts/intake_wizard.py"
 python "$WIZARD" --output-dir paper_rewriting_output
 ```
@@ -121,7 +124,7 @@ On first setup, or when the user asks to change PaperSpine interface language,
 run the wizard in global setup mode:
 
 ```bash
-WIZARD="$HOME/.codex/skills/paper-spine-ui/scripts/intake_wizard.py"
+WIZARD="./embedded/paper-spine-intake/scripts/intake_wizard.py"
 [ -f "$WIZARD" ] || WIZARD="$HOME/.claude/skills/paper-spine-ui/scripts/intake_wizard.py"
 python "$WIZARD" --setup-global --output-dir paper_rewriting_output
 ```

@@ -4,7 +4,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-WIZARD="$SCRIPT_DIR/intake_wizard.py"
+WIZARD="$SCRIPT_DIR/../../paper-spine-intake/scripts/intake_wizard.py"
 OUTPUT_DIR="${1:-paper_rewriting_output}"
 
 if [ ! -f "$WIZARD" ]; then

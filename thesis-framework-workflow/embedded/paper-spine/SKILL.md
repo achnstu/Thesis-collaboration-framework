@@ -3,6 +3,9 @@ name: paper-spine
 description: Write, rewrite, or build a paper or report (journal, conference, report, review, competition) end to end, then output LaTeX/PDF/Word. The main PaperSpine entry point that orchestrates every step.
 ---
 
+> 包内调用：本入口按需使用，核心方法见 [主技能](../../SKILL.md)。路径以当前技能包为基准，同级内嵌模块从相邻目录解析，不要求安装到全局 skills。旧文档中的全局安装命令不是本包的前置步骤。当前主机能力与未执行项按 [兼容说明](../../references/portability.md) 记录。
+
+
 # PaperSpine Orchestrator
 
 Use this skill as the suite entrypoint. It is the main orchestrator: it routes
@@ -61,8 +64,7 @@ Required fields:
    **Codex hard constraint (do not skip):** when
    `paper_rewriting_output/paper_spine_config.json` is missing, the FIRST tool
    action after reading this skill MUST be to run the absolute
-   `launch_paperspine_ui.ps1` (resolve under `~/.codex/skills/...` or
-   `~/.claude/skills/...`) with `sandbox_permissions: require_escalated` so the
+   `launch_paperspine_ui.ps1` (resolve under the package-relative `embedded/paper-spine-intake/scripts/` directory) with `sandbox_permissions: require_escalated` so the
    window can open. Do NOT inspect materials, infer defaults, create config
    files, or continue the workflow before the UI has launched or explicitly
    failed. Only fall back to numbered/chat intake if the launch returns an error.

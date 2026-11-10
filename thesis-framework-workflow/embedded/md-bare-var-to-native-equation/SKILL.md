@@ -11,6 +11,9 @@ description: >
   "自动转mathtype"、"OMML转MathType"。
 ---
 
+> 包内调用：本入口按需使用，核心方法见 [主技能](../../SKILL.md)。路径以当前技能包为基准，同级内嵌模块从相邻目录解析，不要求安装到全局 skills。旧文档中的全局安装命令不是本包的前置步骤。当前主机能力与未执行项按 [兼容说明](../../references/portability.md) 记录。
+
+
 # Markdown 裸变量 → Word 原生公式（OMML）
 
 作者：集美大学 罗强
@@ -132,7 +135,7 @@ for k in ['P_sc,k=0','a_k in','alpha 为','g_k ','c_j ','fc_smoothness','H2 合�
 Windows + Word + MathType + pywin32 都需要可用。先检测 MathType：
 
 ```powershell
-cd "C:\Users\zwzhu\.myskills\skills\md-bare-var-to-native-equation"
+Set-Location -LiteralPath (Read-Host '输入当前技能或工作目录的完整路径')
 py .\scripts\convert_omml_to_mathtype.py --check
 ```
 
@@ -145,9 +148,9 @@ py -m pip install pywin32
 注意 Windows 中文路径：若输入文件路径含中文，先用 PowerShell 复制到 ASCII 路径再交给 Python：
 
 ```powershell
-cd "C:\Users\zwzhu\Documents\Codex\..."
+Set-Location -LiteralPath (Read-Host '输入当前技能或工作目录的完整路径')
 New-Item -ItemType Directory -Force -Path ".\work\mathtype" | Out-Null
-Copy-Item -Path "C:\Users\zwzhu\Desktop\中文文件.docx" -Destination ".\work\mathtype\input.docx" -Force
+Copy-Item -LiteralPath (Read-Host '输入待转换 DOCX 的完整路径') -Destination '.\work\mathtype\input.docx'
 ```
 
 Python 有时会把中文路径读成 `??`，导致误判文件不存在或复制出 0 字节文件。
@@ -157,7 +160,7 @@ Python 有时会把中文路径读成 `??`，导致误判文件不存在或复�
 建议把输入输出写成绝对路径，避免 Word COM 找错文件：
 
 ```powershell
-cd "C:\Users\zwzhu\.myskills\skills\md-bare-var-to-native-equation"
+Set-Location -LiteralPath (Read-Host '输入当前技能或工作目录的完整路径')
 py .\scripts\convert_omml_to_mathtype.py "C:\path\to\out.docx" "C:\path\to\out_mathtype.docx"
 ```
 

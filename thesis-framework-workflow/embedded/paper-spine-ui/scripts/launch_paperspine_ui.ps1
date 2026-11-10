@@ -5,7 +5,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$wizard = Join-Path $scriptDir "intake_wizard.py"
+$wizard = Join-Path $scriptDir "..\..\paper-spine-intake\scripts\intake_wizard.py"
 
 if (-not (Test-Path -LiteralPath $wizard)) {
     throw "PaperSpine intake wizard not found: $wizard"

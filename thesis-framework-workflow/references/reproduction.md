@@ -16,6 +16,7 @@
 - `assets/templates/`：论证规划、图表记录、排版验收模板，可复制为项目工作底稿。
 - `examples/sample-results.csv`：12 行虚构数据，重复和场景字段独立，适合手算或用统计软件验证。
 - `examples/worked-example.md`：从问题、聚合、图表设计、正文至检查的完整示例，包含预期值。
+- `scripts/render_waterfall.py` 与 `examples/waterfall/`：独立 CSV 清单入口、八条合成数据与包内 PNG。无需原作者工程。具体契约见 [透视瀑布图复现](origin-perspective-waterfall.md#复现脚本与运行)，运行顺序见 [兼容说明](portability.md)。
 - `embedded/editaplot/`：可按其许可使用的 Origin 技能与参考素材。运行依赖另见[内嵌技能清单](embedded-skills.md)。
 - `embedded/nature-figure/assets/`：源技能自带的参考素材，使用前核对其来源、许可和适用范围，不把第三方图像或数字当作论文研究数据。
 

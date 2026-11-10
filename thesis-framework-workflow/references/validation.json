@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "in_place_upgrade": true,
+  "example_data": "synthetic_only",
+  "package_relative_links_checked": 262,
+  "missing_resources": [],
+  "broken_relative_links": [],
+  "private_path_or_session_findings": [],
+  "standard_library_checks_without_site_packages": "passed",
+  "moved_directory_check": {
+    "spaces_and_unicode": true,
+    "different_cwd": true,
+    "original_runtime_env_removed": true,
+    "preflight": "passed",
+    "native_origin_render": "passed"
+  },
+  "native_render": {
+    "platform": "Windows x64",
+    "python": "3.12.14",
+    "origin": "2026 / 10.30018",
+    "source_readback": {
+      "source_files_unchanged": true,
+      "exact_xy_readback": true,
+      "series": 8,
+      "points": 968
+    },
+    "labels": {
+      "uniform_spacing": true,
+      "parallel": true,
+      "ep001_clearance_page_units": 50.0
+    },
+    "custom_annotation_readback": "passed",
+    "packed_preview_pixel_match": true,
+    "visual_qa": "passed_agent_visual_review"
+  },
+  "other_operating_systems": {
+    "core_workflow": "documented_portable",
+    "data_preflight": "standard_library_only",
+    "native_origin": "Windows_only",
+    "live_tests": "not_run_on_macOS_or_Linux"
+  },
+  "author_review": "not_claimed",
+  "word_insertion": "not_checked",
+  "assets_sha256": {
+    "assets/waterfall/label-detail.png": "c267714066968c18d00998b54eacc4490618a5cab304e818d42e33daf84d6b71",
+    "assets/waterfall/perspective-example.png": "d9606ce7fba8a87c5dceba67a3d13bfc663f12abec6eb84d8bb2157bd5845130",
+    "assets/templates/two-level-three-line-table.docx": "4dd5a9f4633593a4cc27adde4b5d81b6c1a2c5e57de8268ceb1d3a1f1eab020a",
+    "assets/templates/two-level-three-line-table.png": "e522b0a6999bd8c9cd93fd34290a821be430e35d0a4b8e51e488b1c3cc3f4791"
+  },
+  "revision_experience_upgrade": {
+    "anonymized_references": [
+      "academic-tables.md",
+      "word-tooling.md",
+      "revision-workflow.md",
+      "writing-examples.md"
+    ],
+    "writing_focus": [
+      "results_argument",
+      "definition_consolidation",
+      "nondefensive_style",
+      "research_not_operation_manual"
+    ],
+    "historical_officecli_execution": "not_found_in_checked_threads_and_scripts",
+    "table_example": {
+      "synthetic": true,
+      "word_version": "16.0",
+      "pages": 1,
+      "header_rows": 2,
+      "category_short_rules": 3,
+      "native_omml_metrics": 4,
+      "native_main_table_rules": true,
+      "floating_rule_shapes": 0,
+      "visual_review": "passed_after_category_header_revision",
+      "author_review": "not_claimed",
+      "other_editors": "not_tested",
+      "relocated_builder_xml_match": true
+    },
+    "checks": {
+      "skill_frontmatter": "passed",
+      "package_links": "passed",
+      "privacy": "passed",
+      "standard_library_no_site_packages": "passed",
+      "changed_python_files": [
+        "scripts/build_table_example.py",
+        "scripts/check_package.py"
+      ],
+      "ruff_lint_and_format": "passed",
+      "max_cyclomatic_complexity": 14
+    },
+    "native_origin_rerender_this_revision": "not_run_documentation_and_table_changes_only"
+  },
+  "git_distribution_check": {
+    "relative_links_checked": 270,
+    "broken_links": [],
+    "private_identifiers": [],
+    "credential_findings": [],
+    "new_restricted_snapshots": 0,
+    "legacy_links": "anonymous_compatibility_entries",
+    "scope": "additional_compatibility_entries_exist_only_in_repository_history_layout"
+  }
+}

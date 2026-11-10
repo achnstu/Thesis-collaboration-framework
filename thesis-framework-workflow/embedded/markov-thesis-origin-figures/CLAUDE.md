@@ -1,4 +1,3 @@
-# 规则入口
+# Portable Origin guidance
 
-遵循 [全局规则](C:/Users/zwzhu/AGENTS.md)。本目录为用户自定义论文 Origin 作图技能，论文任务另遵循工作区 AGENTS.md。
-
+Follow the current host rules and the [current package-relative Origin entry](../project-origin-figures/SKILL.md). No original-author paths are required.
