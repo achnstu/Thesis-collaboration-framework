@@ -4,7 +4,7 @@
 
 ## 第三方范围
 
-EditaPlot 为 Apache-2.0，保留原 LICENSE、NOTICE 和源码来源清单。humanizer-zh 为 MIT，保留其 LICENSE。第三方作者署名、软件商标和必要许可文本不匿名改写为本项目成果。
+EditaPlot 为 Apache-2.0，保留原 LICENSE、NOTICE 和源码来源清单。humanizer-zh 与 lieflat-less-ai-tone 为 MIT，随各自快照保留 LICENSE 与署名。后者原目录缺少 README 中引用的两张宣传图片，本包将这两处改为文字链接，规则与研究说明保留。第三方作者署名、软件商标和必要许可文本不匿名改写为本项目成果。
 
 其他历史内嵌工具仍按各自许可证处理。docx 快照的原许可限制第三方分发，nature-figure 的第三方素材存在非商业及许可范围限制，其他未核清授权的快照也不能据此声明可公开再分发。若要向第三方分享整个目录，应先按实际目标核对或排除这些受限资源，不将可移植性检查等同于许可批准。核心工作流不依赖这些历史快照，references 中已有自包含方法。
 

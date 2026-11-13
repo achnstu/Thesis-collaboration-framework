@@ -4,6 +4,54 @@
 
 以下全部是虚构教学例子。每组改写只使用该组给出的事实，不能将数字、方法和结论迁入真实论文。修改时先核对研究证据，再选择合适表达，不要求每段套用同一种句式。
 
+## 英文写作与符号的通俗示例
+
+以下示例均为虚构。它们展示判断方法，不是要求模仿的句型或真实研究结论。
+
+### 长句：在真正影响阅读时拆分
+
+原文：The same model is used for both datasets, while the policies are trained separately for each dataset and evaluated on their respective test sets.
+
+建议：The same model is used for both datasets. Policies are trained separately for each dataset and evaluated on their respective test sets.
+
+共同设置与分别训练分开表达，仍保留各自测试集。若一句已经清楚，即使句子较长也不强行拆分。短句仍应留在承担同一作用的自然段中。
+
+### 语态：看表达对象，也看作者风格
+
+原文：We train each policy using the same settings.
+
+建议：Each policy is trained using the same settings.
+
+这里重点是训练安排，自然被动表达适用。文献归因另看上下文，例如 “Smith et al. [1] introduced the controller.” 应保留作者和对应引文，不为了被动语态改成无作者的句子。作者或期刊允许第一人称时，不把这条偏好机械升级为禁令。
+
+### 精简：保留必要事实与限定
+
+原文：The proposed method shows a decrease in energy consumption. Energy consumption decreases by 3% compared with the baseline under the tested condition.
+
+建议：Under the tested condition, energy consumption decreases by 3% compared with the baseline.
+
+删除同义重复，保留条件、比较对象、方向和数值。不将测试条件下的结果写成普遍结论。原文没有数据时，不自行补造 3%。
+
+### 变量到符号：一个量不使用两个名字
+
+假设当前正文定义电池功率为 \(P_{\mathrm{bat},k}\)。插入公式时仍使用 \(P_{\mathrm{bat},k}\)，不要另用 \(P_{b,k}\) 表示同一电池功率。若旧稿存在两个写法，先对照定义和来源确认它们确为同一量，再按授权统一公式、文字、表头及相关文件。
+
+### 符号到变量：一个完整符号不承担两个含义
+
+假设 \(P_{\mathrm{bat},k}\) 已定义为第 \(k\) 步的电池功率，就不能再用完全相同的 \(P_{\mathrm{bat},k}\) 表示燃料电池功率。两种物理量应使用当前稿件中各自已定义的符号。若未定义，先核实并建立明确符号，再解释和使用。
+
+### 不要把不同量误合并
+
+\(P_k\) 可以表示第 \(k\) 步的瞬时功率，\(\bar P_k\) 可以表示事先定义的窗口均值。它们不同，不应因字母相同而删掉横线。\(P_k\) 与 \(P_{k-1}\) 代表同一变量在不同时间步的值。连续时间 \(t\) 与离散步 \(k\) 表示不同概念，不能全局机械替换。求和式 \(\sum_{i=1}^{n} x_i\) 中的 \(i\) 是局部索引，按该式的作用域核对。
+
+### 公式说明：第一次解释，后面不反复列参数
+
+若 \(E=P\Delta t\) 中的 \(E\)、\(P\) 和 \(\Delta t\) 都首次出现，可写：
+
+> where \(E\) is the energy over the interval, \(P\) is the constant power during the interval, and \(\Delta t\) is the interval duration.
+
+当功率随时间变化时不能直接套用此式。若 \(P\) 已在前文定义，就只释义本处新出现的量。参数表已有数值时，文字不必重复全部取值。
+
 ## 从自我辩护转为具体结果
 
 原文：在相同测试条件下，方案 B 的能耗比方案 A 低 2%，跟踪误差高 1%。但是，这不能说明方案 B 全面优于方案 A，也不能保证在其他条件下仍然有效，结果需要谨慎理解。

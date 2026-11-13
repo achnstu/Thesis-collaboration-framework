@@ -23,7 +23,7 @@ PRIVATE = re.compile(
 
 def markdown_links(path):
     text = path.read_text(encoding="utf-8-sig")
-    text = re.sub(r"```.*?```", "", text, flags=re.S)
+    text = re.sub(r"```.*?```", "", text, flags=re.DOTALL)
     for target in re.findall(r"\[[^\]]*\]\(([^)]+)\)", text):
         target = target.strip().strip("<>")
         if re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", target) or target.startswith("#"):
@@ -92,6 +92,10 @@ def main():
         "references/word-tooling.md",
         "references/revision-workflow.md",
         "references/writing-examples.md",
+        "references/writing.md",
+        "embedded/humanizer-zh/SKILL.md",
+        "embedded/lieflat-less-ai-tone/SKILL.md",
+        "embedded/lieflat-less-ai-tone/LICENSE",
         "scripts/build_table_example.py",
         "assets/templates/two-level-three-line-table.docx",
         "assets/templates/two-level-three-line-table.png",
@@ -105,13 +109,20 @@ def main():
     missing = [name for name in required if not (ROOT / name).exists()]
     count, links = check_links()
     private = scan_private()
-    _, panels, hashes = load_manifest(ROOT / "examples/waterfall/manifest.json")
-    source_hashes_ok = all(
-        hashlib.sha256(Path(p).read_bytes()).hexdigest() == value
-        for p, value in hashes.items()
-    )
+    panels = []
+    source_hashes_ok = False
+    sample_error = None
+    try:
+        _, panels, hashes = load_manifest(ROOT / "examples/waterfall/manifest.json")
+        source_hashes_ok = all(
+            hashlib.sha256(Path(p).read_bytes()).hexdigest() == value
+            for p, value in hashes.items()
+        )
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        # Avoid placing source paths or CSV contents in shareable diagnostics.
+        sample_error = type(exc).__name__
     report = {
-        "ok": not (missing or links or private),
+        "ok": not (missing or links or private or sample_error) and source_hashes_ok,
         "missing_resources": missing,
         "relative_links_checked": count,
         "broken_core_links": links,
@@ -121,13 +132,14 @@ def main():
             "series": len(panels),
             "points": sum(len(p["x"]) for p in panels),
             "source_hashes_valid": source_hashes_ok,
+            "error_type": sample_error,
         },
         "capabilities": capabilities(),
         "origin_started": False,
         "outputs_written": False,
     }
     print(json.dumps(report, ensure_ascii=False, indent=2), flush=True)
-    sys.exit(0 if report["ok"] and source_hashes_ok else 1)
+    sys.exit(0 if report["ok"] else 1)
 
 
 if __name__ == "__main__":
