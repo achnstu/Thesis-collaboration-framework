@@ -17,7 +17,7 @@ description: 以论文框架和共享证据组织写作、文献、数据核验�
 
 每个任务都应能回答：在全文中解决什么问题、为什么由本章处理、依据哪些具体材料、结果能支持什么、如何与其他任务衔接。向作者用可理解的话说明这些关系，不仅给出目录、图或成稿。多对话是本方法的重要实践，不是完成单个任务的强制前提，具体执行尊重用户及平台授权。
 
-检查采用 [作者与 AI 共同审阅](references/collaborative-review.md)：AI 先自行完成必要的证据、数据和文件核查，再结合可查看的正文、图或对照结果与作者讨论真正需要判断的问题。检查范围与任务风险相称，复用有效的既有检查，不把每一步变成确认或重复填写清单。作者反馈用于更新成果与共享经验，未实际完成的核验如实标明。
+检查采用 [作者与 AI 共同审阅](references/multi-chat-collaboration.md#作者与-ai-共同审阅)：AI 先自行完成必要的证据、数据和文件核查，再结合可查看的正文、图或对照结果与作者讨论真正需要判断的问题。检查范围与任务风险相称，复用有效的既有检查，不把每一步变成确认或重复填写清单。作者反馈用于更新成果与共享经验，未实际完成的核验如实标明。
 
 ## 原则
 
@@ -27,20 +27,22 @@ description: 以论文框架和共享证据组织写作、文献、数据核验�
 2. **搭建论证框架**：建立全篇主线、章节职责、节内问题—方法—证据—结果—局限，以及章节之间的承接。用章节与素材映射、论点—证据表、图表计划、符号表管理，必要时先输出纯目录供讨论。详见 [写作与证据](references/writing.md)。
 3. **设计与制作图表**：先确认每幅图回答的问题、数据来源、样本和统计口径，再选择图型与视觉编码。交付可编辑源文件、绘图代码、数据索引和适合目标文档的图片，实际查看并回开核验。详见 [作图与验收](references/figures.md)。制作或回改多航程透视瀑布图时，另读 [Origin 透视瀑布图](references/origin-perspective-waterfall.md)，按需求选择原生可旋转三维模板，或采用二维投影构建可编辑透视图。该图型用于展示单条轨迹与持续时间，精确比较幅值时配合二维图，不作为所有时序图的默认形式。
 4. **逐章写作**：按框架与证据组织正文，先定义问题和条件，再阐述方法、比较结果及机制，保持结论与数据覆盖范围一致。引用逐条核对来源是否支持论断，逐章检查符号、单位、图表引用与上下文。英文写作、长句与语态审查，以及插入或修改公式时，读取 [写作与证据](references/writing.md#英文科技论文的语言审查) 和 [符号与公式的一一对应](references/writing.md#符号与公式的一一对应)。
-5. **排版与交付**：先取得学校模板及公式、图表、参考文献要求。保护既有公式对象、引用域与人工修改，使用可编辑样式和交叉引用。检查结构、渲染页面及 Word 实际显示。详见 [Word 与排版](references/layout.md)。
+5. **排版与交付**：先取得学校模板及公式、图表、参考文献要求。保护既有公式对象、引用域与人工修改，使用可编辑样式和交叉引用。检查结构、渲染页面及 Word 实际显示。详见 [Word 与排版](references/word-tooling.md)。
 6. **交叉复核**：按材料类型追踪“原始证据 → 处理或解释 → 论证与展示 → 摘要和结论”，例如数据经过筛选汇总后进入图表，史料则经出处核验和解释进入正文。记录来源、版本、检查范围及未验证项。小任务仅覆盖相关链条。
 
-写作与润色以作者认可的当前稿件和本包写作经验为基础。中文表达主要参考内嵌 [humanizer-zh](embedded/humanizer-zh/SKILL.md) 与 [lieflat-less-ai-tone](embedded/lieflat-less-ai-tone/SKILL.md)，按 [中文学术表达与论证](references/chinese-academic-style.md) 适配学术文体。英文表达使用 [英文语言审查](references/writing.md#英文科技论文的语言审查)，不把中文规则机械套入英文。PaperSpine 仅在研究设计、框架或完整改写确有需要时选用相关部分。保留作者认可且准确的文字，不为套用工具而改写。用 [通俗对照示例](references/writing-examples.md#英文写作与符号的通俗示例) 理解规则，示例不可当作真实数据。
+写作与润色以作者认可的当前稿件和本包写作经验为基础。中文表达主要参考内嵌 [humanizer-zh](embedded/humanizer-zh/SKILL.md) 与 [lieflat-less-ai-tone](embedded/lieflat-less-ai-tone/SKILL.md)，按 [中文学术表达与论证](references/writing.md#中文学术表达与论证) 适配学术文体。英文表达使用 [英文语言审查](references/writing.md#英文科技论文的语言审查)，不把中文规则机械套入英文。PaperSpine 仅在研究设计、框架或完整改写确有需要时选用相关部分。保留作者认可且准确的文字，不为套用工具而改写。用 [通俗对照示例](references/writing-examples.md#英文写作与符号的通俗示例) 理解规则，示例不可当作真实数据。
+
+写作体系先按 [研究问题与章节职责](references/writing.md#从研究问题到各部分写法) 建立主线，再按 [各部分写法](references/writing.md#摘要结论结果与公式释义) 起草，用 [同一案例的连贯中英示例](references/writing-examples.md#摘要结论与结果的连贯示例) 理解从摘要到结论的衔接。摘要、结论、结果与公式释义按问题和证据选择详略，不套固定模板。规则区分作者偏好、修稿经验和公开论文观察，[文献依据与原段精读](references/literature.md#经典写法片段) 保留公开出处、少量原文段落及其论证分析，优先利用相关领域全文，并补充高水平跨领域论文。英文被动语态按语境使用，不作为中文写作要求。
 
 **写作提醒**：起草、润色或审查论文正文、摘要、补充材料、回复信与投稿文字时，主动应用本技能和与任务有关的参考，无需作者每次重复指定。交付前检查方法是否清楚、关键比较和数值是否有依据、结论强度是否符合证据，并删除无信息的重复或套话。仅有待润色文字时保留其原有主张，将需要进一步证实的结论另行提示，不补造实验。插入或修改公式时按 [符号与公式的一一对应](references/writing.md#符号与公式的一一对应) 核对。当前用户要求、作者确认的稿件及项目规则优先，文字版或先审批的授权不等于可直接写回文件。
 
-强化结果论证、合并重复定义、避免防御性或工程说明式叙述时，读取 [写作与证据](references/writing.md#避免防御性叙述) 和 [匿名改写对照](references/writing-examples.md)。先明确发现、证据和解释，必要条件集中交代，操作流程留在相应复现材料。精简不能遗漏审稿问题或删除影响结论的事实。
+交付前按 [段落组织与合并](references/writing.md#段落组织与合并) 检查相邻段落，同一问题下的发现、数字与解释优先连贯成段，短句不机械分成短段。避免防御性或工程说明式叙述时，按 [相关规则](references/writing.md#避免防御性叙述) 处理，对照例子统一在上述示例文档中，不另建重复指南。精简不能遗漏审稿问题或删除影响结论的事实。
 
 制作三线表、两级表头或跨页续表时，读取 [学术表格](references/academic-tables.md)。一级表示物理类别或分组，二级表示具体指标、符号及单位，不按换行或字体判断层级。原生边框、分组合并、逻辑子表和续页分别处理。需要选择 Word、OfficeCLI 或 OOXML 时读 [Word 工具与调用](references/word-tooling.md)，区分工具可用、实际执行和页面验收。
 
 期刊返修及正文、SI、回复信联动时，读取 [返修流程](references/revision-workflow.md)。以作者指定的当前成稿为依据，追踪实际修改和证据，必要时由成稿反向同步规划。只读其他对话不自动授权跨对话发送消息。
 
-开展完整论文项目时，按 [阶段实施与交接](references/stage-gates.md) 确定每阶段的输入、输出和检查。涉及文献综述或补引时，读取 [文献与引用工作流](references/literature.md)。局部任务只执行相关阶段。
+开展完整论文项目时，按 [阶段实施与交接](references/workspace-architecture.md#阶段实施与交接) 确定每阶段的输入、输出和检查。涉及文献综述或补引时，读取 [文献与引用工作流](references/literature.md)。局部任务只执行相关阶段。
 
 完整项目采用 [框架驱动的协调方法](references/multi-chat-collaboration.md)，按需建立 [协调台账](assets/templates/coordination-ledger.md)、任务卡及证据映射。用户明确要求多对话协作或跨对话交接时，按该方法组织各对话。创建对话和向已有对话发送消息须遵守当前平台的授权要求，不能仅因本技能存在而主动创建或发送。单对话项目也按相同证据链和交接原则工作，规模按任务裁剪。
 
@@ -52,7 +54,7 @@ description: 以论文框架和共享证据组织写作、文献、数据核验�
 
 ## 模板与示例
 
-按需复制 [工作区入口模板](assets/templates/workspace-entry.md)、[规划模板](assets/templates/thesis-planning.md)、[图表记录模板](assets/templates/figure-record.md)、[排版验收模板](assets/templates/layout-checklist.md) 和 [阶段交接模板](assets/templates/handoff.md) 到实际项目，填写真实来源和状态。先读 [复现说明](references/reproduction.md)，再参考 [模拟案例](examples/worked-example.md) 及其 [样本数据](examples/sample-results.csv)。案例数字完全虚构，仅用于演示，禁止迁入真实论文。模板是工作材料，不是强制输出清单，学校要求和用户目标优先。
+按需复制 [工作区入口模板](assets/templates/workspace-entry.md)、[规划模板](assets/templates/thesis-planning.md)、[图表记录模板](assets/templates/figure-record.md)、[排版验收模板](assets/templates/layout-checklist.md) 和 [阶段交接模板](assets/templates/handoff.md) 到实际项目，填写真实来源和状态。先读 [复现说明](references/portability.md#模板与示例的使用)，再参考 [模拟案例](examples/worked-example.md) 及其 [样本数据](examples/sample-results.csv)。案例数字完全虚构，仅用于演示，禁止迁入真实论文。模板是工作材料，不是强制输出清单，学校要求和用户目标优先。
 
 按需使用 [对话任务卡](assets/templates/chat-task-card.md)、[论点与证据映射](assets/templates/claim-evidence-map.md) 和 [协调台账](assets/templates/coordination-ledger.md)。[虚构协作示例](examples/collaboration-example.md) 展示从章节问题到原始数据、分工和变更通知的完整路径。
 
@@ -60,8 +62,8 @@ description: 以论文框架和共享证据组织写作、文献、数据核验�
 
 ## 项目案例
 
-[匿名工程研究 案例](references/case-overview.md) 在本包内提供可独立阅读的项目背景和经验索引，并分为框架与协作、数据与作图、写作与排版三个专题。没有历史会话访问权限也可阅读。具体项目数字、图号、策略和样式只作历史案例，实际使用以当前作者、学校规范和原始证据为准。
+[匿名工程研究 案例](references/case-overview.md) 将框架协作、数据图表和写作排版的历史经验合并在一份文档，可独立阅读。没有历史会话访问权限也可阅读。具体项目数字、图号、策略和样式只作历史案例，实际使用以当前作者、学校规范和原始证据为准。
 
-2026-11-10 增补 [匿名瀑布图经验](references/case-data-figures.md#透视瀑布图与跨数据集复用)、[可直接读取的 CSV 清单入口](scripts/render_waterfall.py) 与 [合成样本](examples/waterfall/manifest.json)。制图复用 embedded/editaplot 包内引擎的会话、队列和回开核验。八轨迹及 0–9 功率范围是当前已验证模板的契约，其他规模须适配并验证。入口和 [包内 PNG](assets/waterfall/perspective-example.png) 均不依赖原作者工程。见 [制作与复现说明](references/origin-perspective-waterfall.md)。
+[匿名瀑布图经验](references/case-overview.md#透视瀑布图与跨数据集复用)、[可直接读取的 CSV 清单入口](scripts/render_waterfall.py) 与 [合成样本](examples/waterfall/manifest.json)。制图复用 embedded/editaplot 包内引擎的会话、队列和回开核验。八轨迹及 0–9 功率范围是当前已验证模板的契约，其他规模须适配并验证。入口和 [包内 PNG](assets/waterfall/perspective-example.png) 均不依赖原作者工程。见 [制作与复现说明](references/origin-perspective-waterfall.md)。
 
-准备公开分发时，先查 [发布检查](references/publication-review.md)，确认第三方许可、个人信息、真实研究材料以及 Git 忽略规则。文件能运行或来源位于本机，不代表已获公开再分发许可。
+准备公开分发时，先查 [发布检查](references/portability.md#分享与第三方许可)，确认第三方许可、个人信息、真实研究材料以及 Git 忽略规则。文件能运行或来源位于本机，不代表已获公开再分发许可。

@@ -4,6 +4,9 @@ description: "中文：Word 文档创建、编辑、修订、批注和内容提�
 license: Proprietary. LICENSE.txt has complete terms
 ---
 
+> 包内调用：本入口按需使用，核心方法见 [主技能](../../SKILL.md)。路径以当前技能包为基准，同级内嵌模块从相邻目录解析，不要求安装到全局 skills。旧文档中的全局安装命令不是本包的前置步骤。当前主机能力与未执行项按 [兼容说明](../../references/portability.md) 记录。
+
+
 # DOCX creation, editing, and analysis
 
 ## Overview

@@ -3,6 +3,9 @@ name: nature-figure
 description: "中文：Nature/高影响期刊级科研作图，多面板图、SVG/PDF/TIFF 导出和审稿风险检查。 English: Submission-grade Nature/high-impact journal figure workflow for Python or R. Use whenever the user asks to create, revise, audit, or polish manuscript figures, multi-panel scientific plots, figures4papers-style matplotlib plots, or journal-ready SVG/PDF/TIFF outputs, especially for Nature-family or other high-impact journals. Before plotting, define the figure's conclusion, evidence logic, export needs, and review risks. If the user has not chosen Python or R, ask \"Python or R?\" and stop. Use only the selected backend for figure generation, previewing, exporting, and QA. Supports matplotlib/seaborn and ggplot2/patchwork/ComplexHeatmap. Not for dashboards or Illustrator/Figma-first infographics."
 ---
 
+> 包内调用：本入口按需使用，核心方法见 [主技能](../../SKILL.md)。路径以当前技能包为基准，同级内嵌模块从相邻目录解析，不要求安装到全局 skills。旧文档中的全局安装命令不是本包的前置步骤。当前主机能力与未执行项按 [兼容说明](../../references/portability.md) 记录。
+
+
 # Nature Figure Making Skill
 
 A guide for producing publication-quality scientific figures as a visual argument, not

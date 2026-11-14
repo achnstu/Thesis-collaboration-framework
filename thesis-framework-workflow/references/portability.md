@@ -1,50 +1,63 @@
-# 独立使用与环境兼容
+# 迁移、复现与分发
 
-直接复制当前技能目录即可保留知识、模板、数据示例与制图源码。目录名称、盘符、用户名和上级项目均可不同，不读取原作者的其他目录或全局技能。个人模板、真实稿件与科研数据是使用者按任务提供的输入，不是包本身的依赖。核心任务从根 SKILL.md 路由，不自动执行所有内嵌技能。
+整目录复制即可保留核心方法、模板、合成数据和自动化源码。路径从本包或输入清单相对解析，不要求原作者工程、盘符、全局技能或历史会话。真实稿件、数据和目标规范由当前使用者提供。不同客户端的技能发现与工具权限不同，未自动识别时直接提供本包 SKILL.md，并按任务读取其相对链接。
 
-不同 AI 客户端的发现机制和工具权限不同。若未自动识别此技能，把复制后目录的 `SKILL.md` 提供给当前 agent，并按入口中的相对链接读取适用参考。只具备文本读取能力时仍可使用论文框架、语言规则和示例。写作基础所参考的 `embedded/humanizer-zh/` 与 `embedded/lieflat-less-ai-tone/` 均随包提供，不需要访问原电脑。样本、项目规则和目标期刊规范由当前使用者提供，中文语料规则不直接作为英文语法规则。不同模型对同一指令的执行可能不同，实际使用时以内容核查为准，不能仅凭格式通过就断言所有 agent 的结果一致。
+## 能力与依赖
 
-## 能力与平台
-
-| 能力 | 依赖 | 兼容范围与缺项处理 |
+| 任务 | 所需能力 | 实际边界 |
 |---|---|---|
-| 框架、证据、写作、协作与交接 | 读取 Markdown 的工具或 AI 客户端 | 不依赖操作系统、原工程或原会话 |
-| 查看示例与学习图面 | 包内 PNG | 普通图片查看器即可，示例不代表读者的实验数据 |
-| 包检查、合成 CSV 预检 | Python 3.11/3.12，标准库 | Windows/macOS/Linux 可运行设计，不启动 Origin，不写输出 |
-| 原生 Origin 图与 OPJU 回开 | 物理 Windows x64、独立安装的 Origin/OriginPro、Python 3.11/3.12 及依赖 | 当前实测为 Windows + Python 3.12 + Origin 2026。本机输出证据不推广为其他系统实测，其他构建按能力核验 |
-| 编辑及查看 Word/WPS | 当前电脑可用文档工具、相应字体 | 无 Word 时可做结构检查，但不宣称完成实际 Word 版式或 OLE 验收 |
-| LaTeX、MathType、Pandoc、文献数据库或 MCP | 按当前任务选择的工具 | 均为可选外部能力，不随技能复制安装，也不是使用核心方法的前提 |
+| 框架、证据、写作与协作 | 读取 Markdown | 可离线使用，无需 Python、Origin、Word 或 MCP |
+| 查看案例图与表格预览 | 图片查看工具 | 包内 PNG 是合成教学示例，不是读者研究结果 |
+| 包检查与 CSV 预检 | 兼容的 Python 3.11+，标准库 | 本轮纯检查在 Windows + Python 3.13.2 通过，其他环境实际核验 |
+| 原生 Origin 图及 OPJU | Windows x64、已安装 Origin/OriginPro、匹配的 Python 与运行依赖 | 已有历史实测为 Python 3.12 + Origin 2026，不能推广为其他系统实测 |
+| 重新生成表格示例 | 兼容 Python 和 python-docx | 不需 Word COM，生成后另验实际显示 |
+| Word、MathType、LaTeX 等 | 当前主机相应工具、字体或服务 | 按任务选择，复制技能不会安装这些软件 |
 
-macOS/Linux 可使用工作流、示例、文本及数据预检。本包不把在这些系统生成的图片冒充原生 Origin 工程。跨机器字体、Origin 构建、打印驱动和 Office 版本可能影响字形与页面，实际输出须回开及查看，不能保证像素跨系统完全一致。
-
-## 文件职责
-
-- `references/` 与 `assets/templates/`：按任务读取的完整方法与工作底稿。
-- `examples/waterfall/`：八条合成 CSV 和 manifest.json，内含源哈希，全部可独立检查。
-- `assets/waterfall/`：由包内合成数据生成的 Origin PNG 示例及标签细节。没有截图中的桌面、路径或工作代号。
-- `assets/templates/two-level-three-line-table.docx` 及同名 PNG：虚构指标的两级表头示例。物理类别、数学指标与单位分层，组线留断口，可自定义，读取不依赖原作者软件路径。
-- `scripts/build_table_example.py`：从虚构数据生成可编辑表格，依赖当前主机的 `python-docx`，不启动 Word。已安装环境可直接使用，没有该依赖时仍可阅读包内 DOCX 或 PNG。
-- `scripts/render_waterfall.py`：manifest 相对路径读取数据、只读预检与新候选目录渲染。
-- `embedded/editaplot/runtime/`：EditaPlot 自动化源码和模板，不含 Python 虚拟环境、软件安装包或私人配置。保留 Apache-2.0 LICENSE、NOTICE 与来源记录。
-- `embedded/` 其他工具：按需参考的文档和脚本，不要求安装到任何全局技能路径。文档操作和可选 UI 的外部程序按当前主机定位，不猜测其他人的目录。
+macOS/Linux 可使用文本、示例与兼容的数据预检，不能把输出图片冒充原生 Origin 工程。跨机器字体、Office、Origin 构建与打印驱动可能影响页面，输出需实际回开。不同 agent 的执行一致性也需内容检查，格式或脚本通过不证明所有写作判断一致。
 
 ## 首次检查
 
-打开 PowerShell，粘贴下列完整步骤。先通过输入选择你实际复制的技能目录，再检查包与合成数据，无须知道原作者路径：
+具备合适 Python 时，在 PowerShell 按顺序执行。输入复制后的真实技能目录，以及已确认的 Python 3.11+ 可执行文件路径或命令名，不使用原作者路径：
 
 ```powershell
 $skillDirectory = Read-Host '输入此技能目录的完整路径'
 Set-Location -LiteralPath $skillDirectory
-py -3.12 -B -X utf8 .\scripts\check_package.py
+$checkPython = Read-Host '输入已确认的 Python 3.11+ 可执行文件路径或命令名'
+& $checkPython --version
+& $checkPython -B -X utf8 .\scripts\check_package.py
 $demoOutput = Join-Path ([System.IO.Path]::GetTempPath()) ('waterfall-demo-' + (Get-Date -Format 'yyyyMMdd_HHmmss'))
-py -3.12 -B -X utf8 .\scripts\render_waterfall.py --manifest .\examples\waterfall\manifest.json --output-dir $demoOutput --check-only
+& $checkPython -B -X utf8 .\scripts\render_waterfall.py --manifest .\examples\waterfall\manifest.json --output-dir $demoOutput --check-only
 ```
 
-若电脑用 `python` 而非 `py`，将 `py -3.12` 替换为已确认的 Python 3.11/3.12 命令。macOS/Linux 在终端进入实际技能目录后用 `python3 -B scripts/check_package.py` 和 `python3 -B scripts/render_waterfall.py --manifest examples/waterfall/manifest.json --output-dir /tmp/waterfall-demo --check-only`。这些是一次性检查，不启动网页或后台服务，正常结束即可。
+macOS/Linux 在终端进入复制后的技能目录，确认 python3 版本适用，再执行：
+
+```bash
+python3 --version
+python3 -B scripts/check_package.py
+python3 -B scripts/render_waterfall.py --manifest examples/waterfall/manifest.json --output-dir /tmp/waterfall-demo --check-only
+```
+
+这些是一次性只读检查，不启动网页、Origin 或后台服务，完成即退出。没有 Python 时仍可阅读核心规则，不能将未执行的包检查报为通过。诊断只共享相对资源名、能力和错误类型，本机绝对路径留在当地记录。
+
+## 模板与示例的使用
+
+按当前任务复制所需模板，不要求创建整套项目。工作区组织及阶段方法集中见 [项目组织](workspace-architecture.md)，写作与图表规则由根入口选择，不在此重列整个流程。
+
+| 包内资源 | 用途 |
+|---|---|
+| assets/templates/ | 规划、证据映射、图表、排版和交接底稿 |
+| examples/sample-results.csv、[完整算例](../examples/worked-example.md) | 虚构数据的聚合、图表设计、文字与预期值 |
+| examples/waterfall/、assets/waterfall/ | 八条合成轨迹、源哈希与 Origin PNG 示例 |
+| [两级表头 DOCX](../assets/templates/two-level-three-line-table.docx) 及 [PNG](../assets/templates/two-level-three-line-table.png) | 可编辑分组表头与原生公式示例，数值虚构 |
+| scripts/ 与 embedded/editaplot/runtime/ | 复现入口、源码、模板与依赖清单，不含应用安装包或虚拟环境 |
+
+模拟材料只验证所列逻辑、数值和显示，不能直接作为真实研究数据。其他内嵌素材的用途与边界见 [内嵌技能清单](embedded-skills.md)，复制前按许可判断，第三方图像和数字不能改称自己的研究结果。
 
 ## Windows 原生制图
 
-先按上节进入技能目录。首次需要原生渲染时，使用项目隔离环境安装依赖，不复制别人的虚拟环境。以下命令需要网络取得 Python 包，已有兼容环境时直接使用它，不重复安装或修改全局 Python：
+需要 Origin 时，先确认已安装的软件、x64 环境和当前运行依赖。下列步骤沿用历史验证的 Python 3.12 环境方案，不把它作为纯写作或包检查的强制版本。已有兼容隔离环境则直接复用，不重复安装或修改全局 Python。
+
+先完成上文目录选择，在同一 PowerShell 中执行。安装步骤需网络取得依赖，未安装 Python 3.12 或 Origin 时先处理对应能力缺口：
 
 ```powershell
 py -3.12 -m venv .venv
@@ -53,18 +66,21 @@ py -3.12 -m venv .venv
 & .\.venv\Scripts\python.exe -B -X utf8 .\scripts\render_waterfall.py --manifest .\examples\waterfall\manifest.json --output-dir $demoOutput
 ```
 
-Origin 由脚本创建独立实例并正常关闭，不要求用户提前启动，不接管已有工程。不使用网页服务。运行中观察阶段输出，失败时保留诊断并检查正常清理，不因等待直接强杀进程。输出目录已存在时选新目录，不删除旧目录。安装依赖不等于已生成 OPJU，`doctor` 也不等于实际制图验收。
+脚本创建并正常关闭独立 Origin 实例，不接管用户工程。观察阶段输出，失败时保留诊断，不强杀无关进程。输出目录已存在时选择新位置，不删除旧结果。安装成功或 doctor 通过不等于原生工程、页面与图面均已验收，具体契约及回开方法见 [透视瀑布图](origin-perspective-waterfall.md#复现脚本与运行)。
 
-## 接入自己的数据
+## 接入自己的数据与迁移核验
 
-复制 manifest 和 CSV 到当前使用者的数据目录，修改清单的文件名、列名、单位缩放、标签及划分。CSV 路径相对 manifest 解析，可不使用任何原工程结构。可选源 SHA 在文件内容改变后应由使用者重新登记，不忽略不匹配。详见 [数据契约与制图](origin-perspective-waterfall.md#复现脚本与运行)。真实数据不打包进共享技能。
+将清单和 CSV 复制到当前使用者的数据位置，修改文件、列、单位、标签与划分。CSV 路径相对 manifest 解析，源内容改变后重新登记哈希，不忽略哈希冲突。不沿用旧项目训练划分或行数，真实数据不进入共享技能包。
 
-## 迁移与隐私检查
+迁移或改名后从新位置运行适用检查，记录输入哈希、参数、软件和实际输出。原生工程、MathType、引文域与页面效果在目标主机单独测试。缺少能力时完成可执行部分，明确未交付的格式或验证，不能由文件存在推断运行成功。
 
-移动或改名后从新位置运行 `scripts/check_package.py` 和 demo 预检。诊断只输出相对资源名、能力和错误类型，不写用户名、盘符、原实验编号或历史会话。源文件哈希可记录，含真实绝对路径的本次运行报告属于本地核验材料，不复制进共享技能。
+[历史匿名验证记录](validation.json) 反映记录时的环境和包版本，不是当前版本的全部验收。历史曾在中文及空格路径、其他工作目录下验证 Origin 回开和标签，并检查一页 Word 表格，不推广为全部软件或所有长表实测。当前更新只报告本轮真正执行的项目。
 
-检查范围包含根入口、相对链接、资源缺失、包内数据哈希、缓存及私人路径。第三方作者署名、许可与上游软件名不属于本项目工作代号，不做匿名篡改。已有第三方快照仍遵循各自许可证，公开或第三方分享前按 [分发说明](publication-review.md) 核对范围。
+## 分享与第三方许可
 
-此前的实际检查记录见 [匿名验证记录](validation.json)，其中链接数量和环境反映记录时的版本，不代表当前包已重新执行同样的全部检查。每次更新或迁移后重新运行检查。示例清单或数据缺失、损坏时，包检查以非零状态报告缺失资源和样本错误类型，不将失败误报为通过。
+共享前核对隐私、真实研究材料、私人配置、路径、会话与内部代号，运行包检查并人工检查其未覆盖的内容。第三方署名、商标、许可证与来源不做匿名篡改，技术可迁移不等于可以公开再分发。
 
-历史检查中，关闭 site-packages 后包检查与数据预检通过，目录移到中文及空格路径并从其他工作目录调用后，本机原生 Origin 出图、回开、标签与便签检查通过。另以 Word 16.0 原生导出一页表格模板并检查图面、两级表头、数学对象及分组短线，不推广为全部长表或其他软件实测。写作材料为人工整理的通用方法与虚构例句，不含作者研究数据。
+- EditaPlot 为 Apache-2.0，保留 LICENSE、NOTICE 和来源记录。humanizer-zh 与 lieflat-less-ai-tone 为 MIT，保留各自许可和署名。后者缺失的宣传图片在本包用文字链接替代。
+- docx 历史快照存在第三方分发限制，nature-figure 素材存在非商业及其他许可边界，尚未核清授权的资源也不能据本技能声明可公开分发。核心参考方法不依赖这些历史快照。
+- 软件安装包、Python wheels、用户虚拟环境和私人配置不随本包提供。外部依赖适用自己的许可证，复制技能不会转移 Origin 或 Office 许可。
+- 实际发布或上传遵守用户授权，不由技能自动触发。向第三方分享整个目录前，按目标核实或排除受限资源，不以包检查通过替代许可判断。

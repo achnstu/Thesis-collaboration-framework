@@ -1,8 +1,18 @@
-# Word 工具选择与对象保护
+# Word、排版与对象保护
 
 触发词: “怎么调用 Word”, “OfficeCLI”, “DOCX 定点修改”, “Word 原生渲染”, “只替换图片”。
 
 先确认任务是新建文档、编辑普通内容、保护复杂对象，还是验证实际排版，再选当前机器可用的工具。技能文档被读取、命令被探测、文件实际改写、页面已核验是不同状态，不能混称为“已使用并验证”。
+
+## 排版规范与检查
+
+学校、期刊和作者当前模板优先。先明确页面、页眉页脚、页码、标题、目录、图表题、参考文献和附录要求，再用样式、题注、编号和交叉引用实现，不把历史字体、修订颜色和字号推广为通用要求。
+
+新建公式采用用户要求的可编辑格式。Markdown 数学表达需先规范，再生成并检查 Word 原生 OMML 的行内变量、表头、释义、编号和页面。确需 MathType 时按授权转换并验证真实 OLE 及可编辑性，不能用图片或转换提示冒充公式。
+
+检查标题层级、目录、分页、孤行、图题同页性、图表位置、公式居中与编号、长公式换行、引文和文末条目。引用域数、唯一文献数和文末条目数分别核对，不要求相等。数字修改按完整上下文或目标单元格定位，防止误改年份、卷号和公式编号。
+
+三线表、分组表头、纵向合并及续表见 [学术表格](academic-tables.md)。使用原生表格边框，不另画横线伪装，续页按要求重复完整表头。结构、渲染页面、实际 Word/WPS 显示和对象可编辑性是不同检查，未执行项不报通过。
 
 ## 已核实的方法与工具分工
 
@@ -54,8 +64,9 @@ PDF 导出后再渲染为 PNG 并查看受影响页面。表格重排、新建�
 ```powershell
 $skillDirectory = Read-Host '输入此技能目录的完整路径'
 Set-Location -LiteralPath $skillDirectory
+$documentPython = Read-Host '输入已安装 python-docx 的兼容 Python 可执行文件路径或命令名'
 $tableExample = Join-Path ([System.IO.Path]::GetTempPath()) ('table-example-' + (Get-Date -Format 'yyyyMMdd_HHmmss') + '.docx')
-py -3.12 -B -X utf8 .\scripts\build_table_example.py --output $tableExample
+& $documentPython -B -X utf8 .\scripts\build_table_example.py --output $tableExample
 ```
 
 已有环境缺少 `python-docx` 时，使用已配置的项目文档环境，或在隔离环境安装该依赖。其他系统在终端进入实际技能目录后，用该环境的 Python 执行同一脚本并指定新输出路径。生成脚本只负责结构，不声称已完成本机 Word 显示检查。没有网页服务，运行结束即停止。
