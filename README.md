@@ -23,6 +23,27 @@ flowchart TD
 
 完整论文可沿主线组织工作，局部任务按需要选取相关环节。写作以作者现稿为基准，并结合 humanizer-zh、lieflat-less-ai-tone 等技能，按任务调用其他工具和参考资料。
 
+### 内嵌技能如何参与
+
+```mermaid
+flowchart LR
+    A["论文框架<br/>研究问题 · 章节职责 · 共享证据"]
+    A --> B["写作与润色"]
+    A --> C["文献与研究"]
+    A --> D["科研图表"]
+    A --> E["公式与文档"]
+    B -.- B1["humanizer-zh<br/>lieflat-less-ai-tone"]
+    C -.- C1["nature-academic-search<br/>PaperSpine 按需参考"]
+    D -.- D1["EditaPlot · nature-figure<br/>Origin 相关入口"]
+    E -.- E1["docx · officecli<br/>Word 原生公式"]
+    B --> F["核对与作者审阅"]
+    C --> F
+    D --> F
+    E --> F
+```
+
+框架负责组织问题、证据和协作，内嵌技能按任务提供具体方法。中文润色主要参考 humanizer-zh 和 lieflat-less-ai-tone，PaperSpine 用于需要时的研究或结构参考。作者的要求和当前稿件优先，内嵌技能不必全部运行。详见 [内嵌技能清单](thesis-framework-workflow/references/embedded-skills.md)。
+
 ## 当前版本包含什么
 
 - **论文主线与协作**：把研究问题、章节职责、论点和证据对应起来，按需使用任务卡、共享记录与交接材料。单人或单对话也可使用，无须强制建立多代理流程。
@@ -30,27 +51,32 @@ flowchart TD
 - **语言与作者风格**：以作者认可的现稿为基准。中文按需结合内嵌 humanizer-zh 和 lieflat-less-ai-tone，PaperSpine 按实际任务选用。英文长句和语态依语境调整，被动语态不是中文写作要求。
 - **公式与结果核对**：同一变量沿用同一完整符号，同一完整符号对应一个含义。区分瞬时量、均值和估计量，并核对上下标、单位及相关文件。结果描述保留比较条件、关键数值和指标取舍，不把代理指标直接写成寿命结论。
 - **返修与文档保护**：以作者当前成稿为依据，按授权范围协调正文、补充材料和回复信，保护 Word 中的公式对象、引用域和人工修改。附可编辑表格模板及工具选择说明。
-- **图表与跨环境使用**：先核对数据口径和图表要回答的问题，再选择图型。包内含合成数据、透视瀑布图示例和自动化源码，按实际能力验证，不假定每台机器都已安装 Origin 或 Word。
+- **图表与跨环境使用**：先核对数据口径和图表要回答的问题，再选择图型。支持常见比较图、时序图、分布图、热图及多种专业图型的设计与制作，包内含透视瀑布图示例和自动化源码。按实际能力验证，不假定每台机器都已安装 Origin 或 Word。
 
 ## 功能示例
 
-### 从数据到结果分析
+### 科研图表类型
 
-下面的虚构例子展示如何从比较中提炼发现，再写成保留指标取舍的结果段。具体判断应以自己的数据、实验条件和统计口径为准。
+根据研究问题、数据结构和目标格式选择图型。除透视瀑布图外，包内工作流和 EditaPlot 还覆盖：
 
-![从虚构数据提炼比较结果并写成论文结果段](assets/result-writing-example.png)
+- **趋势与关系**：折线图、带误差线的趋势图、散点图和气泡图。
+- **比较与分布**：柱状图、箱线图、小提琴图、直方图、雨云图及原始数据点展示。
+- **矩阵与关联**：热图、混淆矩阵、桑基图和网络关系图。
+- **专业数据**：XPS、XRD、红外光谱、循环伏安及阻抗等图型，以及其他支持的数据图。
+
+图型的输入要求和可用范围见 [图型与支持情况](thesis-framework-workflow/embedded/editaplot/references/chart-selection.md)。具体制作可按任务选用 Origin、Python 等工具，Origin 自动化需要兼容的本机软件及依赖。某图型在一个版本验证通过，不代表其他电脑或所有数据结构均已验证。
+
+### 透视瀑布图
+
+下图是众多图型中的一个示例，使用合成轨迹展示多条时序数据及各自持续时间。此示例在 Origin 中以二维投影构建透视效果。制作方法、数据清单和软件要求见 [透视瀑布图说明](thesis-framework-workflow/references/origin-perspective-waterfall.md)。
+
+![使用合成轨迹的透视瀑布图示例](thesis-framework-workflow/assets/waterfall/perspective-example.png)
 
 ### 学术表格
 
 两级表头将物理类别、指标符号和单位分层呈现。下图使用虚构数据，配套的 [Word 模板](thesis-framework-workflow/assets/templates/two-level-three-line-table.docx) 可按研究需求编辑。
 
 ![使用虚构数据的两级表头与三线表示例](thesis-framework-workflow/assets/templates/two-level-three-line-table.png)
-
-### 透视瀑布图
-
-下图使用合成轨迹，展示多条时序数据及各自持续时间。此示例在 Origin 中以二维投影构建透视效果。制作方法、数据清单和软件要求见 [透视瀑布图说明](thesis-framework-workflow/references/origin-perspective-waterfall.md)。
-
-![使用合成轨迹的透视瀑布图示例](thesis-framework-workflow/assets/waterfall/perspective-example.png)
 
 ## 如何使用
 
