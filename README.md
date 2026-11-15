@@ -52,6 +52,28 @@ flowchart LR
 
 ## 功能示例
 
+### 学术写作改写对照
+
+以下为虚构示例，展示如何在保留事实和条件的同时调整表达。更多例子见 [学术写作改写对照](thesis-framework-workflow/references/writing-examples.md)。
+
+**结果分析：把同一比较中的数字和解释放在一起**
+
+> 修改前：缓变负荷下，方案 B 的平均能量消耗比方案 A 低 6.0%。同一条件下，源功率增量均方降低 30.0%，归一化跟踪误差从 1.5% 增至 1.8%。结果说明能耗和功率动态改善伴随跟踪精度代价。
+
+> 修改后：缓变负荷下，方案 B 的平均能量消耗比方案 A 低 6.0%，源功率增量均方降低 30.0%，但归一化跟踪误差从 1.5% 增至 1.8%。能耗和功率动态改善伴随跟踪精度代价。
+
+**研究叙述：保留统计方法，去掉文件操作**
+
+> 修改前：我们先运行脚本生成训练曲线，再读取每个种子的 CSV，把结果写入工作簿，逐行检查后导出图像。每条轨迹的能耗先累计，然后在三个独立训练种子间计算均值和样本标准差。
+
+> 修改后：能耗先在每条轨迹内累计，再在三个独立训练种子间计算均值和样本标准差。
+
+**英文表达：拆分影响阅读的长句**
+
+> 修改前：The same model is used for both datasets, while the policies are trained separately for each dataset and evaluated on their respective test sets.
+
+> 修改后：The same model is used for both datasets. Policies are trained separately for each dataset and evaluated on their respective test sets.
+
 ### 科研图表类型
 
 包内工作流和 EditaPlot 支持多种图型：
