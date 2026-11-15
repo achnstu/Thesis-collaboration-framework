@@ -6,6 +6,8 @@
 
 ## 工作流程
 
+<div align="center">
+
 ```mermaid
 flowchart TD
     A["提供研究问题、现有稿件与资料"] --> B["确定目标、范围和论文主线"]
@@ -22,6 +24,8 @@ flowchart TD
     I --> J["与作者共同审阅并交付"]
     J -->|"根据反馈修订"| D
 ```
+
+</div>
 
 完整论文可沿主线组织工作，局部任务按需要选取相关环节。写作以作者现稿为基准，并结合 humanizer-zh、lieflat-less-ai-tone 等技能，按任务调用其他工具和参考资料。
 
