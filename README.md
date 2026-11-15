@@ -32,6 +32,26 @@ flowchart TD
 - **返修与文档保护**：以作者当前成稿为依据，按授权范围协调正文、补充材料和回复信，保护 Word 中的公式对象、引用域和人工修改。附可编辑表格模板及工具选择说明。
 - **图表与跨环境使用**：先核对数据口径和图表要回答的问题，再选择图型。包内含合成数据、透视瀑布图示例和自动化源码，按实际能力验证，不假定每台机器都已安装 Origin 或 Word。
 
+## 功能示例
+
+### 从数据到结果分析
+
+下面的虚构例子展示如何从比较中提炼发现，再写成保留指标取舍的结果段。具体判断应以自己的数据、实验条件和统计口径为准。
+
+![从虚构数据提炼比较结果并写成论文结果段](assets/result-writing-example.png)
+
+### 学术表格
+
+两级表头将物理类别、指标符号和单位分层呈现。下图使用虚构数据，配套的 [Word 模板](thesis-framework-workflow/assets/templates/two-level-three-line-table.docx) 可按研究需求编辑。
+
+![使用虚构数据的两级表头与三线表示例](thesis-framework-workflow/assets/templates/two-level-three-line-table.png)
+
+### 透视瀑布图
+
+下图使用合成轨迹，展示多条时序数据及各自持续时间。此示例在 Origin 中以二维投影构建透视效果。制作方法、数据清单和软件要求见 [透视瀑布图说明](thesis-framework-workflow/references/origin-perspective-waterfall.md)。
+
+![使用合成轨迹的透视瀑布图示例](thesis-framework-workflow/assets/waterfall/perspective-example.png)
+
 ## 如何使用
 
 将 [thesis-framework-workflow](thesis-framework-workflow/) **整个目录**复制到所用 agent 的技能目录，或在对话中直接提供其中的 [SKILL.md](thesis-framework-workflow/SKILL.md) 路径，让 agent 根据任务读取相关参考文件。路径相对技能包解析，不依赖原作者的工程、用户名、盘符或历史对话。不同 agent 的发现方式和权限可能不同，按其实际能力使用。
