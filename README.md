@@ -32,10 +32,12 @@ flowchart LR
     A["中文润色"] --- A1["humanizer-zh · lieflat-less-ai-tone"]
     B["文献与结构"] --- B1["nature-academic-search · PaperSpine"]
     C["科研图表"] --- C1["EditaPlot · nature-figure · Origin 入口"]
-    D["公式与文档"] --- D1["Word 原生公式 · docx · officecli"]
+    D["公式与文档"] --- D1["Markdown 裸变量转 Word 原生公式<br/>docx · officecli"]
 ```
 
 框架负责组织问题、证据和协作，内嵌技能按任务提供具体方法。中文润色主要参考 humanizer-zh 和 lieflat-less-ai-tone，PaperSpine 用于需要时的研究或结构参考。作者的要求和当前稿件优先，内嵌技能不必全部运行。详见 [内嵌技能清单](thesis-framework-workflow/references/embedded-skills.md)。
+
+公式处理包含自建的 [Markdown 裸变量转 Word 原生公式](thesis-framework-workflow/embedded/md-bare-var-to-native-equation/SKILL.md)：识别正文、释义和表格中的裸变量，规范为 LaTeX，并通过 Pandoc 生成 Word 原生公式（OMML）。按需转换为 MathType，实际执行取决于用户要求及本机软件。转换后仍须核对公式内容、符号和对象。
 
 ## 当前版本包含什么
 
