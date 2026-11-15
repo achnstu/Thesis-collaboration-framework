@@ -6,19 +6,10 @@
 
 ```mermaid
 flowchart TD
-    A["提供研究问题、现有稿件与资料"] --> B["确定目标、范围和论文主线"]
-    B --> C["组织章节职责、论点与证据"]
-    C --> D["按需开展论文工作"]
-    D --> E["写作与语言润色"]
-    D --> F["文献与数据核验"]
-    D --> G["公式、图表与排版"]
-    D --> H["返修与审稿回复"]
-    E --> I["核对事实、符号和跨文件一致性"]
-    F --> I
-    G --> I
-    H --> I
-    I --> J["与作者共同审阅并交付"]
-    J -->|"根据反馈修订"| D
+    A["整理现有稿件、数据和要求"] --> B["确定研究问题与章节安排"]
+    B --> C["按章节写作、制作图表或返修"]
+    C --> D["核对数据、文献、公式和相关文件"]
+    D --> E["作者审阅，按反馈修改"]
 ```
 
 完整论文可沿主线组织工作，局部任务按需要选取相关环节。写作以作者现稿为基准，并结合 humanizer-zh、lieflat-less-ai-tone 等技能，按任务调用其他工具和参考资料。
@@ -27,19 +18,10 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    A["论文框架<br/>研究问题 · 章节职责 · 共享证据"]
-    A --> B["写作与润色"]
-    A --> C["文献与研究"]
-    A --> D["科研图表"]
-    A --> E["公式与文档"]
-    B -.- B1["humanizer-zh<br/>lieflat-less-ai-tone"]
-    C -.- C1["nature-academic-search<br/>PaperSpine 按需参考"]
-    D -.- D1["EditaPlot · nature-figure<br/>Origin 相关入口"]
-    E -.- E1["docx · officecli<br/>Word 原生公式"]
-    B --> F["核对与作者审阅"]
-    C --> F
-    D --> F
-    E --> F
+    A["中文润色"] --- A1["humanizer-zh · lieflat-less-ai-tone"]
+    B["文献与结构"] --- B1["nature-academic-search · PaperSpine"]
+    C["科研图表"] --- C1["EditaPlot · nature-figure · Origin 入口"]
+    D["公式与文档"] --- D1["Word 原生公式 · docx · officecli"]
 ```
 
 框架负责组织问题、证据和协作，内嵌技能按任务提供具体方法。中文润色主要参考 humanizer-zh 和 lieflat-less-ai-tone，PaperSpine 用于需要时的研究或结构参考。作者的要求和当前稿件优先，内嵌技能不必全部运行。详见 [内嵌技能清单](thesis-framework-workflow/references/embedded-skills.md)。
