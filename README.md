@@ -81,7 +81,11 @@ flowchart LR
 
 内嵌技能按任务选用，PaperSpine 可用于研究设计和结构参考。作者的要求和当前稿件优先。详见 [内嵌技能清单](thesis-framework-workflow/references/embedded-skills.md)。
 
-自建的 [Markdown 裸变量转 Word 原生公式](thesis-framework-workflow/embedded/md-bare-var-to-native-equation/SKILL.md) 技能可以识别正文、释义和表格中的裸变量，将其规范为 LaTeX，再通过 Pandoc 生成 Word 原生公式（OMML）。如需 MathType，可在本机软件支持时转换，并核对转换后的公式内容和对象。
+自建的 [Markdown 裸变量转 Word 原生公式](thesis-framework-workflow/embedded/md-bare-var-to-native-equation/SKILL.md) 技能将正文、释义和表格中的裸变量规范为 LaTeX，再通过 Pandoc 生成可编辑的 Word 原生公式（OMML）。需要 MathType 时，可在安装了 Word 和 MathType 的 Windows 环境中继续转换。
+
+下图为已有转换测试截图：左侧是 Word 中的测试公式，右侧展示其中一个公式在 MathType 中打开后的编辑界面。
+
+![Word 原生公式转换为 MathType 后的编辑示例](thesis-framework-workflow/embedded/md-bare-var-to-native-equation/assets/mathtype-conversion-reference.png)
 
 ## 当前版本包含什么
 
