@@ -48,19 +48,20 @@
 <div align="center">
 
 ```mermaid
+%%{init: {"htmlLabels": false}}%%
 flowchart TD
-    A["提供研究问题、现有稿件与资料"] --> B["确定目标、范围和论文主线"]
-    B --> C["组织章节职责、论点与证据"]
+    A["提供研究问题<br/>现有稿件与资料"] --> B["确定目标与范围<br/>梳理论文主线"]
+    B --> C["组织章节职责<br/>对应论点与证据"]
     C --> D["按需开展论文工作"]
     D --> E["写作与语言润色"]
     D --> F["文献与数据核验"]
     D --> G["公式、图表与排版"]
     D --> H["返修与审稿回复"]
-    E --> I["核对事实、符号和跨文件一致性"]
+    E --> I["核对事实与符号<br/>检查跨文件一致性"]
     F --> I
     G --> I
     H --> I
-    I --> J["与作者共同审阅<br/>根据反馈修订并交付"]
+    I --> J["与作者共同审阅<br/>按反馈修订并交付"]
 ```
 
 </div>
@@ -70,6 +71,7 @@ flowchart TD
 ### 内嵌技能如何参与
 
 ```mermaid
+%%{init: {"htmlLabels": false}}%%
 flowchart LR
     A["中文润色"] --- A1["humanizer-zh · lieflat-less-ai-tone"]
     B["文献与结构"] --- B1["nature-academic-search · PaperSpine"]
