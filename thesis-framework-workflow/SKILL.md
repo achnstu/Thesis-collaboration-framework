@@ -37,6 +37,8 @@ description: 按任务含义自动选择写作、证据、文献、图表、排�
 
 先读写作执行规则，再读 [写作与证据](references/writing.md) 的目标语言和相关章节。只改一段时读取该段、必要上下文和作者确认样本，不先加载绘图后端、软件预检或协作台账。摘要、结论、结果与公式释义按各自职责组织，不能只做词句替换。
 
+摘要中文不超过 **300 字**，英文不超过 **150 个词**，篇幅核对并入本轮文字检查。当前用户或目标规范另有明确要求时按其执行，统计口径见 [摘要写法](references/writing.md#摘要形成一条完整而有取舍的信息链)。
+
 中文润色首次读取内嵌 [humanizer-zh](embedded/humanizer-zh/SKILL.md) 与 [lieflat-less-ai-tone](embedded/lieflat-less-ai-tone/SKILL.md)，按学术文体与授权适配，已读且未变时复用。英文按本包英文规则和作者现稿调整。PaperSpine 在研究设计、结构或完整改写确有需要时按需参考。
 
 公式按 [一一对应规则](references/writing.md#符号与公式的一一对应) 核对含义、完整记号和样式。同一符号的字体、正斜体、粗细及上下标样式沿用作者确认稿，插入时不得随来源或段落格式变化。需要 Word 原生公式时再读内嵌 [公式技能](embedded/md-bare-var-to-native-equation/SKILL.md)。[改写示例](references/writing-examples.md) 为虚构教学材料，不迁入真实研究。
