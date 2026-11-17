@@ -35,6 +35,10 @@
 
 证据确认后，章节写作与图表制作可并行。每个任务写清目标、输入位置与版本、可写范围、依赖和交付物，只提供相关材料。当前主稿、共享数据表和图形工程各指定一名写入负责人，其他执行者提交独立候选。分工也可由同一 agent 分步完成，并行时遵循用户授权和平台能力。
 
+下图为一次多 agent 协同演示。主代理协调任务并整合成果，各成员分别处理对应模块。
+
+![论文工作区中的主代理与各模块成员协同演示](thesis-framework-workflow/assets/multi-agent-collaboration.png)
+
 各任务完成一轮必要检查后交接成果及检查范围，整合者核对版本和跨模块一致性，发现问题后局部处理，复用已有核验。模板可选用 [工作区入口](thesis-framework-workflow/assets/templates/workspace-entry.md)、[任务卡](thesis-framework-workflow/assets/templates/chat-task-card.md) 和 [交接记录](thesis-framework-workflow/assets/templates/handoff.md)，小任务直接在消息中说明即可。
 
 可以这样开始：
