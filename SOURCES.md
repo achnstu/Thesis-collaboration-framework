@@ -6,7 +6,7 @@
 |---|---|---|
 | `editaplot` | [EditaPlot](https://github.com/hang-jin/editaplot)，可编辑 Origin 科研图 | Apache-2.0，见原目录 LICENSE 和 NOTICE。现已随包提供自动化 runtime/src、templates、依赖清单及来源记录，不含 Origin 或 Python 虚拟环境。 |
 | `humanizer-zh` | 本机修订版，正文注明参考 [Humanizer](https://github.com/blader/humanizer)、[Humanizer-zh](https://github.com/op7418/Humanizer-zh) 和 [stop-slop](https://github.com/hardikpandya/stop-slop) | 本地快照含 MIT LICENSE，保留原作者声明。 |
-| `paper-spine`、`paper-spine-audit`、`paper-spine-build`、`paper-spine-citation`、`paper-spine-humanize`、`paper-spine-intake`、`paper-spine-latex`、`paper-spine-research`、`paper-spine-rewrite`、`paper-spine-translate`、`paper-spine-ui`、`paper-spine-update` | [PaperSpine](https://github.com/WUBING2023/PaperSpine)，研究、写作与审计流程 | 本地快照标记 3.3.0，上游当前声明 MIT，但该快照与许可证版本的对应关系尚未核实。主流程不调用以降低 AI 检测率为目标的子技能。 |
+| `paperspine-v6`（含 `paper-spine`、`paper-spine-study`、`paper-spine-followwriting`、`paper-spine-figures`、`paper-spine-review`、`paper-spine-deliver`） | [PaperSpine V6](https://github.com/WUBING2023/PaperSpine/releases/tag/v6.0.0-beta.2)，参考引导写作、研究、图表、审阅与交付方法 | 官方 6.0.0-beta.2 快照，保留 MIT LICENSE 及 `upstream.json`（来源、归档哈希与逐文件校验值）。主流程只取其写作与论证方法，不执行以降低 AI 检测率为目标的子技能。 |
 | `nature-figure` | 本地科研作图技能，文件注明参考 [figures4papers](https://github.com/ChenLiu-1996/figures4papers) | 本地技能自身许可未确认。上游 figures4papers 许可为 CC BY-NC 4.0，包含非商业限制，素材权利须分别核对。 |
 | `nature-academic-search` | 本地学术检索技能 | 上游来源与再分发授权尚未核实。配置 JSON 为本地路径占位示例，不包含在 Git 发布内容中。 |
 | `officecli` | 本地 OfficeCLI 操作技能，正文介绍 [officecli.ai](https://officecli.ai/) | 本地快照的确切上游版本及再分发授权尚未核实。 |

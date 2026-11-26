@@ -11,6 +11,7 @@ import sys
 from pathlib import Path
 
 from waterfall_inputs import load_manifest
+from bar_line_inputs import load_manifest as load_bar_line_manifest
 
 ROOT = Path(__file__).resolve().parents[1]
 TEXT = {".md", ".py", ".ps1", ".sh", ".json", ".yaml", ".yml", ".txt", ".csv", ".toml"}
@@ -102,6 +103,16 @@ def main():
         "examples/waterfall/manifest.json",
         "assets/waterfall/perspective-example.png",
         "assets/waterfall/label-detail.png",
+        "references/origin-bar-line-dual-axis.md",
+        "references/bar-line-dual-axis-validation.json",
+        "scripts/render_bar_line_dual_axis.py",
+        "scripts/origin_bar_line_style.py",
+        "scripts/verify_bar_line_dual_axis.py",
+        "scripts/bar_line_inputs.py",
+        "examples/bar-line-dual-axis/manifest.json",
+        "examples/bar-line-dual-axis/totals.csv",
+        "examples/bar-line-dual-axis/curves.csv",
+        "assets/bar-line-dual-axis/example.png",
         "embedded/editaplot/LICENSE",
         "embedded/editaplot/runtime/src/origin_sciplot/origin_backend/session.py",
         "embedded/editaplot/runtime/templates",
@@ -112,12 +123,18 @@ def main():
     panels = []
     source_hashes_ok = False
     sample_error = None
+    bar_line = {}
     try:
         _, panels, hashes = load_manifest(ROOT / "examples/waterfall/manifest.json")
         source_hashes_ok = all(
             hashlib.sha256(Path(p).read_bytes()).hexdigest() == value
             for p, value in hashes.items()
         )
+        config, bars, curves, _ = load_bar_line_manifest(
+            ROOT / "examples/bar-line-dual-axis/manifest.json")
+        bar_line = {"synthetic": config.get("synthetic", False),
+                    "categories": len(bars["values"]), "curves": len(curves),
+                    "points": sum(len(curve["x"]) for curve in curves)}
     except (OSError, ValueError, KeyError, TypeError) as exc:
         # Avoid placing source paths or CSV contents in shareable diagnostics.
         sample_error = type(exc).__name__
@@ -135,6 +152,7 @@ def main():
             "error_type": sample_error,
         },
         "capabilities": capabilities(),
+        "bar_line_dual_axis_sample": bar_line,
         "origin_started": False,
         "outputs_written": False,
     }

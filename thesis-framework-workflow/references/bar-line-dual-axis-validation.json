@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "chart_type": "bar-line-dual-axis",
+  "updated_in_place": true,
+  "backups_created": false,
+  "example_data": "synthetic_only",
+  "runtime_dependency": "bundled embedded/editaplot/runtime source plus external Python packages and installed Origin",
+  "native_render": {
+    "platform": "Windows x64",
+    "python": "3.12.14",
+    "origin": "10.30",
+    "data": {
+      "exact_xy_readback": true,
+      "categories": 3,
+      "curves": 3,
+      "curve_points": 33
+    },
+    "source_files_unchanged": true,
+    "saved_project_reopened": true,
+    "native_layers": 2,
+    "right_axis_ticks": [
+      0.0,
+      10.0,
+      20.0,
+      30.0,
+      40.0,
+      50.0,
+      60.0
+    ],
+    "right_axis_numeric_labels_visible": true,
+    "native_gradient_mode": 3.0,
+    "page_cm": [
+      13.500100000000002,
+      13.500100000000002
+    ],
+    "png": {
+      "bytes": 167713,
+      "sha256": "808e2caf4e231962777ef45bcfe21b171fda2173ff6bd6d808dde5adc03e40ed",
+      "pixels": [
+        3189,
+        3189
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    },
+    "opju_sha256": "3b37322f8fd1240f75082f7310d336a1bffae9eb9e3c02d0dde0b1f208b0502d",
+    "emf": {
+      "bytes": 139420,
+      "sha256": "86460ae5a6523796360da2d8ac06952ff535a483f01ddc2b2e0bd718192aa36e"
+    },
+    "visual_qa": "passed_agent_visual_review",
+    "grayscale_review": "viewed"
+  },
+  "relocation_test": {
+    "same_physical_machine": true,
+    "different_machine_tested": false,
+    "whole_skill_copied": true,
+    "unicode_and_space_directory": true,
+    "unrelated_working_directory": true,
+    "python_isolated_mode": true,
+    "original_runtime_environment_paths_set_to_invalid_values": true,
+    "standard_library_preflight_without_site_packages": "passed",
+    "native_origin_save_reopen_data_readback": "passed",
+    "top_time_axis_variant": "passed_agent_visual_review",
+    "right_ticks": [
+      0.0,
+      10.0,
+      20.0,
+      30.0,
+      40.0,
+      50.0,
+      60.0
+    ]
+  },
+  "input_contract_tests": {
+    "accepted": [
+      "valid",
+      "unequal_curve_lengths"
+    ],
+    "rejected": [
+      "missing_value",
+      "duplicate_time",
+      "nonfinite_value",
+      "out_of_axis_range",
+      "bar_line_overlap",
+      "source_hash_mismatch",
+      "zero_comparison_denominator"
+    ],
+    "standard_library_only": true
+  },
+  "host_scope": {
+    "native_origin": "Windows only; other Origin versions require local verification",
+    "macOS_Linux_native_tested": false,
+    "preflight": "standard library; no application required"
+  },
+  "author_review": {
+    "original_design": "accepted in conversation",
+    "new_synthetic_example": "not_claimed"
+  },
+  "package_checks": {
+    "skill_creator_quick_validate": "passed",
+    "relative_links_checked": 322,
+    "broken_links": [],
+    "private_path_or_session_files": [],
+    "stdlib_package_check_without_site_packages": "passed",
+    "changed_python_syntax": "passed",
+    "read_only_document_review": "completed_and_three_findings_resolved",
+    "final_two_layer_x_and_y_axis_assertions": "passed_on_both_saved_projects",
+    "actual_runtime_module_path": "confirmed_under_bundled_relative_source"
+  },
+  "assets_sha256": {
+    "assets/bar-line-dual-axis/example.png": "366bc255525883b7ed0630d2bed0dac060eae580de9b5429923ec9dff0fc55b0"
+  }
+}

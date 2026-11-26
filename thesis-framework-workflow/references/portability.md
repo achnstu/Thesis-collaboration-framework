@@ -14,6 +14,7 @@
 | 原生 Origin 图及 OPJU | Windows x64、已安装 Origin/OriginPro、匹配的 Python 与运行依赖 | 已有历史实测为 Python 3.12 + Origin 2026，不能推广为其他系统实测 |
 | 重新生成表格示例 | 兼容 Python 和 python-docx | 不需 Word COM，生成后另验实际显示 |
 | Word、MathType、LaTeX 等 | 当前主机相应工具、字体或服务 | 按任务选择，复制技能不会安装这些软件 |
+| PaperSpine V6 方法 / 可选网页 | 方法可直接读取，安装管理器需 Python 3.12+，网页需 Windows x64 与 Codex CLI | 快照含六个技能和 MIT 许可，不含网页运行时或私人 profile。接入见 [适配说明](paperspine-integration.md) |
 
 macOS/Linux 可使用文本、示例与兼容的数据预检，不能把输出图片冒充原生 Origin 工程。跨机器字体、Office、Origin 构建与打印驱动可能影响页面，输出需实际回开。不同 agent 的执行一致性也需内容检查，格式或脚本通过不证明所有写作判断一致。
 
@@ -50,6 +51,7 @@ python3 -B scripts/render_waterfall.py --manifest examples/waterfall/manifest.js
 | assets/templates/ | 规划、证据映射、图表、排版和交接底稿 |
 | examples/sample-results.csv、[完整算例](../examples/worked-example.md) | 虚构数据的聚合、图表设计、文字与预期值 |
 | examples/waterfall/、assets/waterfall/ | 八条合成轨迹、源哈希与 Origin PNG 示例 |
+| [examples/bar-line-dual-axis/](../examples/bar-line-dual-axis/manifest.json)、[组合图预览](../assets/bar-line-dual-axis/example.png) | 下柱上折线双 Y 轴的相对路径清单、虚构数据与原生出图示例 |
 | [两级表头 DOCX](../assets/templates/two-level-three-line-table.docx) 及 [PNG](../assets/templates/two-level-three-line-table.png) | 可编辑分组表头与原生公式示例，数值虚构 |
 | scripts/ 与 embedded/editaplot/runtime/ | 复现入口、源码、模板与依赖清单，不含应用安装包或虚拟环境 |
 
@@ -67,6 +69,8 @@ py -3.12 -m venv .venv
 & .\.venv\Scripts\python.exe -B .\embedded\editaplot\scripts\editaplot.py doctor
 & .\.venv\Scripts\python.exe -B -X utf8 .\scripts\render_waterfall.py --manifest .\examples\waterfall\manifest.json --output-dir $demoOutput
 ```
+
+下柱上折线组合图复用同一包内运行时和隔离环境，另选新的输出目录，调用 `scripts/render_bar_line_dual_axis.py`。完整预检、制图及日志命令见 [组合图独立运行](origin-bar-line-dual-axis.md#独立运行与迁移)，不依赖原电脑的剪贴板图片、全局 EditaPlot 或 MCP 桥接。迁移验证区分“同机搬移目录通过”和“另一台电脑实测”，不混称。
 
 脚本创建并正常关闭独立 Origin 实例，不接管用户工程。观察阶段输出，失败时保留诊断，不强杀无关进程。输出目录已存在时选择新位置，不删除旧结果。安装成功或 doctor 通过不等于原生工程、页面与图面均已验收，具体契约及回开方法见 [透视瀑布图](origin-perspective-waterfall.md#复现脚本与运行)。
 

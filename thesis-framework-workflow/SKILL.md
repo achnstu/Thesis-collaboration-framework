@@ -5,7 +5,7 @@ description: 按任务含义自动选择写作、证据、文献、图表、排�
 
 # 论文框架、写作与返修
 
-触发词: “帮我写”, “润色”, “改一下”, “翻译”, “压缩”, “扩写”, “顺一下表达”, “像AI”, “起标题”, “写回复”, “更新README”, “核对结果”, “查文献”, “补引用”, “画图”, “改图”, “做表”, “排版”, “转公式”, “调整目录”, “返修”, “合稿”。
+触发词: “帮我写”, “润色”, “改一下”, “翻译”, “压缩”, “扩写”, “顺一下表达”, “像AI”, “起标题”, “写回复”, “更新README”, “核对结果”, “查文献”, “补引用”, “画图”, “改图”, “做表”, “排版”, “转公式”, “调整目录”, “返修”, “合稿”, “Followwriting”, “逐段对标”, “逐句对照”, “PaperSpine工作台”。
 
 **按任务含义自动触发，关键词不是白名单。** 凡起草、修改、翻译或评审供阅读的文字，均进入写作模块，不要求用户点名技能。其他任务同样按产物选择模块。结合对象与上下文理解“改一下”等请求，按实际文体适配，不把论文结构或某位作者的偏好强加给所有文章。
 
@@ -35,13 +35,13 @@ description: 按任务含义自动选择写作、证据、文献、图表、排�
 
 ## 写作时集中加载
 
-先读写作执行规则，再读 [写作与证据](references/writing.md) 的目标语言和相关章节。只改一段时读取该段、必要上下文和作者确认样本，不先加载绘图后端、软件预检或协作台账。摘要、结论、结果与公式释义按各自职责组织，不能只做词句替换。
+先读[写作执行与反向自检](references/writing-review.md)，再从[各部分起草路线](references/writing.md#从研究问题到各部分写法)选择当前目标，阅读对应的详细写法和目标语言规则。接手旧稿或另一个 AI 的工作时，先按[接手续写](references/writing-review.md#写前固定依据)重建写作依据，再落笔。完整成稿先复查实际待交付版本，收到复查结果并处理后才能交付，不以规则已读或复查已发起代替通过。只改一段时读取该段、必要上下文和作者确认样本，不先加载绘图后端、软件预检或协作台账。摘要、结论、结果与公式释义按各自职责组织，不能只做词句替换。
 
 摘要中文不超过 **300 字**，英文不超过 **150 个词**，篇幅核对并入本轮文字检查。当前用户或目标规范另有明确要求时按其执行，统计口径见 [摘要写法](references/writing.md#摘要形成一条完整而有取舍的信息链)。
 
-中文润色首次读取内嵌 [humanizer-zh](embedded/humanizer-zh/SKILL.md) 与 [lieflat-less-ai-tone](embedded/lieflat-less-ai-tone/SKILL.md)，按学术文体与授权适配，已读且未变时复用。英文按本包英文规则和作者现稿调整。PaperSpine 在研究设计、结构或完整改写确有需要时按需参考。
+中文润色首次读取内嵌 [humanizer-zh](embedded/humanizer-zh/SKILL.md) 与 [lieflat-less-ai-tone](embedded/lieflat-less-ai-tone/SKILL.md)，按学术文体与授权适配，已读且未变时复用。英文按本包英文规则和作者现稿调整。[参考引导写作与论证重构](references/writing.md#参考引导写作与论证重构)已将 PaperSpine 的论证层级、互补参考、段落动作和成稿核对纳入本模块。参考引导的起草、实质改写及逐段或逐句对照时，按该节直接读取内嵌 [Followwriting](embedded/paperspine-v6/skills/paper-spine-followwriting/SKILL.md) 及所需原方法，再结合作者语言规则形成实际文字。可复用[写作提示词](assets/templates/writing-prompts.md)，只填写现有材料能确定的内容。需要网页或同任务续写时再读 [工作台适配](references/paperspine-integration.md)。普通微调不启动完整研究或网页流程。
 
-公式按 [一一对应规则](references/writing.md#符号与公式的一一对应) 核对含义、完整记号和样式。同一符号的字体、正斜体、粗细及上下标样式沿用作者确认稿，插入时不得随来源或段落格式变化。需要 Word 原生公式时再读内嵌 [公式技能](embedded/md-bare-var-to-native-equation/SKILL.md)。[改写示例](references/writing-examples.md) 为虚构教学材料，不迁入真实研究。
+公式按 [一一对应规则](references/writing.md#符号与公式的一一对应) 核对含义、完整记号和样式。同一符号的字体、正斜体、粗细及上下标样式沿用作者确认稿，插入时不得随来源或段落格式变化。需要 Word 原生公式时再读内嵌 [公式技能](embedded/md-bare-var-to-native-equation/SKILL.md)，生成或修复可供 MathType 转换的公式时落实 [空格与上横线兼容检查](references/equation-compatibility.md)。[改写示例](references/writing-examples.md) 为虚构教学材料，不迁入真实研究。
 
 **本技能包含自动文字复查授权。** 完整段落或一批文字写完后，默认自主派发 **一名只读子代理**，按 [复查协议](references/writing-review.md#一名子代理集中复查) 完成本轮规则检查，无需另问用户。同一批文字集中复查，主代理落实意见后只复核改动处，不叠加两轮全文检查。错别字、个别标点等微调可直接自检。用户禁止代理、任务本身只是复查或平台不提供子代理时，由当前执行者完成，不递归派发，不创建新对话。
 
@@ -55,6 +55,6 @@ description: 按任务含义自动选择写作、证据、文献、图表、排�
 
 首次用于一个项目时，提醒作者将 [简短执行规则](references/writing-review.md#接入现有项目) 放入现有标准 `AGENTS.md`，列为项目内高优先级写作与模块约定，并指定完整技能路径。配置好后不重复提醒，不将配置作为本次工作的前置条件。
 
-陌生项目按需读 [学科适配](references/getting-started.md)。工具选择见 [内嵌清单](references/embedded-skills.md)，透视瀑布图有 [专门说明](references/origin-perspective-waterfall.md)，其他图型按数据与问题选择。模板从 [工作区入口](assets/templates/workspace-entry.md) 按需取用，[模拟项目](examples/worked-example.md)、[协作示例](examples/collaboration-example.md) 和 [匿名经验](references/case-overview.md) 只供参考。
+陌生项目按需读 [学科适配](references/getting-started.md)。工具选择见 [内嵌清单](references/embedded-skills.md)，透视瀑布图有 [专门说明](references/origin-perspective-waterfall.md)。需要在一个画框内组织下部总量柱图、上部时序折线及左右 Y 轴时，使用 [Origin 下柱上折线双 Y 轴组合图](references/origin-bar-line-dual-axis.md)，它提供可迁移脚本、数据清单及合成示例。其他图型按数据与问题选择。模板从 [工作区入口](assets/templates/workspace-entry.md) 按需取用，[模拟项目](examples/worked-example.md)、[协作示例](examples/collaboration-example.md) 和 [匿名经验](references/case-overview.md) 只供参考。
 
 整目录迁移、脚本执行或分发时读 [兼容说明](references/portability.md)。纯写作可离线完成，无需先检查 Origin、Word 或 Python。项目只指定一个现行技能入口，避免同名副本漂移。不同客户端的自动加载和实际执行仍需核对，包校验不代替内容判断。

@@ -5,7 +5,7 @@
 | 任务 | 内嵌入口 | 用途 |
 |---|---|---|
 | 中文润色 | `embedded/humanizer-zh/SKILL.md`、`embedded/lieflat-less-ai-tone/SKILL.md` | 中文写作经验的重要参考。保留作者声音、事实和限定，针对实际的空话、重复与生硬表达作最小修改。两者不是作者身份鉴定器，也不保证检测结果。 |
-| 全文研究、结构、证据、章节与审计 | `embedded/paper-spine/SKILL.md` 及 `embedded/paper-spine-*` | 可选的辅助参考，只在研究设计、结构、完整改写或审计有需要时选取相关方法。原入口按已安装独立技能路由，在本包改为直接打开相邻同名目录。主流程不调用以降低 AI 检测率为目标的 `paper-spine-humanize`。 |
+| 参考引导写作、研究、图表、审阅与交付 | `embedded/paperspine-v6/skills/paper-spine/SKILL.md` 及同级五个阶段技能 | V6 6.0.0-beta.2 官方快照。论证层级、互补参考及写作动作已融入 [写作模块](writing.md#参考引导写作与论证重构)，执行时直接读取 `paper-spine-followwriting` 和必要原方法。可复用 [任务提示词](../assets/templates/writing-prompts.md)，边界及网页连接见 [适配说明](paperspine-integration.md)。无需全局安装即可读取方法，保留 MIT 许可证与来源，不以检测分数为目标。 |
 | 文献检索和核验 | `embedded/nature-academic-search/SKILL.md` | 适用于确需检索时核对元数据及原文支持。 |
 | 数据图设计 | `embedded/nature-figure/SKILL.md` | 选择统计图型和验收，按目标模板确定风格。 |
 | Origin 数据图与模板 | `embedded/editaplot/SKILL.md` | 运行源码和模板随包提供。读取科学语义、安全与回开规则。自定义透视瀑布图从根 scripts 的 manifest 入口调用同一后端，见下文集成说明。选用 catalog 模板时保留其语义门禁。 |
@@ -14,10 +14,10 @@
 | Word 原生公式 | `embedded/md-bare-var-to-native-equation/SKILL.md` | 规范数学表达与 OMML 检查。 |
 | DOCX 操作 | `embedded/docx/SKILL.md`、`embedded/officecli/SKILL.md` | 选择当前环境可用工具，保护对象并检查页面。 |
 
-论文写作先依据作者认可的现稿、当前任务和本包 [写作原则](writing.md) 与 [改写示例](writing-examples.md)。中文润色参考上述两种内嵌技能，英文沿用通用的保真与简洁原则，但不把中文特征规则当成英文规则。lieflat 原技能的白名单、结构保护和不处理外语等边界只适用于直接执行其中文清理任务，不限制用户另行授权的结构调整或英文修改。内嵌规则冲突时依次服从用户当前要求、项目约定和本包适配。论文框架主要来自作者实践和整理经验，PaperSpine 只作按需辅助，不假称执行完整流程。
+论文写作先依据作者认可的现稿、当前任务和本包 [写作原则](writing.md) 与 [改写示例](writing-examples.md)。中文润色参考上述两种内嵌技能，英文沿用通用的保真与简洁原则，但不把中文特征规则当成英文规则。lieflat 原技能的白名单、结构保护和不处理外语等边界只适用于直接执行其中文清理任务，不限制用户另行授权的结构调整或英文修改。内嵌规则冲突时依次服从用户当前要求、项目约定和本包适配。PaperSpine 的主动动词、文献学习数量和多代理建议按当前文体与授权适配，不覆盖作者的自然被动语态等约定，也不扩大写回、实验或代理范围。只执行写作阶段时不声称运行了完整研究流程。
 
 DOCX 操作按 [工具选择](word-tooling.md) 路由，三线表由 [学术表格](academic-tables.md) 的目标样式控制，不套用其他工具的默认网格或底色。OfficeCLI 已内嵌不等于本次实际执行，必须按命令和结果记录。
 
-PaperSpine 配置 UI、网络检索、LaTeX、Word、Origin、MathType、Pandoc 及 MCP 服务属于外部运行依赖，复制技能不会一并安装或保证可用。其脚本可能包含原机器路径或依赖同级已安装技能，先检查并适配，禁止盲目运行。优先使用文档中可迁移原则，再根据本机实际工具执行。不存在本机软件时继续完成可执行部分，并明确缺口。
+PaperSpine V6 内嵌的是方法与脚本快照，网页工作台及其 Windows Python 在宿主中独立安装，不随本包分发。网络检索、LaTeX、Word、Origin、MathType、Pandoc 及 MCP 同样按任务检查。网页通过 [管理器桥接脚本](../scripts/paperspine_workbench.py) 定位正式安装，不使用历史 3.x UI 或 main 频道更新脚本。缺少宿主运行时仍可离线执行 Followwriting 方法。
 
 EditaPlot 的文档、CLI、runtime/src、runtime/templates、依赖清单和 Apache-2.0 LICENSE/NOTICE 均位于本包 `embedded/editaplot/`，不含虚拟环境、Origin 应用或私人配置。路径从当前文件相对解析，不需要作者电脑上的另一份仓库。参见 [瀑布图集成](../embedded/editaplot/references/thesis-waterfall-integration.md) 与 [首次使用和环境兼容](portability.md)。通用 CLI 与自定义瀑布图分别按自己的能力与验收范围运行，作者确认的科学口径及图级样式优先。旧工具文档中的 setup 安装全局技能不是使用本包的必需步骤。

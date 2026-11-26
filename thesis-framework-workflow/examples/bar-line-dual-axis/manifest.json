@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "chart_type": "bar-line-dual-axis",
+  "synthetic": true,
+  "description": "Synthetic demonstration of lower total bars and upper cumulative time curves. No experimental data.",
+  "page_cm": [13.5, 13.5],
+  "layer_percent": [25, 5, 52, 82],
+  "font": "Times New Roman",
+  "left_axis": {"title": "Total \\i(H)\\-(2) consumption (g)", "limits": [0, 100, 20]},
+  "right_axis": {"title": "Cumulative \\i(H)\\-(2) consumption (g)", "upper_limits": [0, 60, 10], "upper_fraction": 0.45454545454545453},
+  "line_x_axis": {"title": "Time (s)", "limits": [0, 1100, 200], "show": false},
+  "bars": {
+    "file": "totals.csv",
+    "category_column": "Strategy",
+    "value_column": "Total",
+    "legend": "Total \\i(H)\\-(2) consumption",
+    "fill_colors": ["#785398", "#F4EFF7"],
+    "edge_color": "#4F3A66",
+    "guide_color": "#9A28FF",
+    "gap_percent": 65,
+    "value_format": ".1f",
+    "guide_lines": true,
+    "category_dividers": true
+  },
+  "series": [
+    {"id": "policy-a", "label": "Policy A", "file": "curves.csv", "x_column": "Time_s", "y_column": "Policy_A", "color": "#9A28FF", "marker": 2},
+    {"id": "policy-b", "label": "Policy B", "file": "curves.csv", "x_column": "Time_s", "y_column": "Policy_B", "color": "#FF8500", "marker": 2},
+    {"id": "policy-c", "label": "Policy C", "file": "curves.csv", "x_column": "Time_s", "y_column": "Policy_C", "color": "#FF1593", "marker": 4}
+  ],
+  "comparisons": [
+    {"from": "Policy A", "to": "Policy B", "x": 1.55, "orientation": "horizontal"},
+    {"from": "Policy B", "to": "Policy C", "x": 2.84, "orientation": "vertical"},
+    {"from": "Policy A", "to": "Policy C", "x": 3.18, "orientation": "vertical"}
+  ]
+}

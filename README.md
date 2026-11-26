@@ -83,7 +83,7 @@ flowchart LR
     D["公式与文档"] --- D1["Markdown 裸变量转 Word 原生公式<br/>docx · officecli"]
 ```
 
-内嵌技能按任务选用，PaperSpine 可用于研究设计和结构参考。作者的要求和当前稿件优先。详见 [内嵌技能清单](thesis-framework-workflow/references/embedded-skills.md)。
+内嵌技能按任务选用，PaperSpine V6 的 Followwriting 可用于参考引导写作，也可用于研究设计和结构参考。作者的要求和当前稿件优先。详见 [内嵌技能清单](thesis-framework-workflow/references/embedded-skills.md)。
 
 自建的 [Markdown 裸变量转 Word 原生公式](thesis-framework-workflow/embedded/md-bare-var-to-native-equation/SKILL.md) 技能将正文、释义和表格中的裸变量规范为 LaTeX，再通过 Pandoc 生成可编辑的 Word 原生公式（OMML）。需要 MathType 时，可在安装了 Word 和 MathType 的 Windows 环境中继续转换。
 
