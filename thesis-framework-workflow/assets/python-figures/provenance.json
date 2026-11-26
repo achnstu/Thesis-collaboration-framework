@@ -17,7 +17,17 @@
     "marginal.png": "4a8ad9d0faf58a8aae130cce3e4ea3501d479883dc7ca4d0b67e50b3ecdaeb68",
     "paired.png": "eb5d3718f62af785c990d529f1064e21e4212bf522e84922ca0a80b06813b07b",
     "roc.png": "c7ec8d9bdc1e5a2882c68bdc0138c01e88cd873df745000a6e40298f3b26f7a9",
-    "templates.png": "1e84bd80fd3e8b95095e7cfe7bf6c6d8fc11ad18012696caa96a59bcd8e3b3ee",
+    "templates.png": "3d9db503111121e3d5c9a8a53e517bb052fb8e30e42ddf5d20c45dec7b0fe3a4",
     "volcano.png": "38cdcd41e100a266b7855263ce912b63068f1aa78ae2e9e44c625415320d1376"
+  },
+  "gallery_layout": {
+    "builder": "../../scripts/build_python_gallery.py",
+    "arrangement": "Three equal cards above two centered equal cards",
+    "card_size_px": [
+      660,
+      680
+    ],
+    "gap_px": 28,
+    "source_images": "Existing exported previews, uncropped and aspect-preserved"
   }
 }
