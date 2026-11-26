@@ -9,7 +9,7 @@
 | 文献检索和核验 | `embedded/nature-academic-search/SKILL.md` | 适用于确需检索时核对元数据及原文支持。 |
 | 数据图设计 | `embedded/nature-figure/SKILL.md` | 选择统计图型和验收，按目标模板确定风格。 |
 | Origin 数据图与模板 | `embedded/editaplot/SKILL.md` | 运行源码和模板随包提供。读取科学语义、安全与回开规则。自定义透视瀑布图从根 scripts 的 manifest 入口调用同一后端，见下文集成说明。选用 catalog 模板时保留其语义门禁。 |
-| 当前使用者的项目 Origin | `embedded/project-origin-figures/SKILL.md` | 匿名适配原则，不含原作者工程路径或预设图号，输入由当前使用者提供。 |
+| 当前使用者的项目 Origin | `embedded/project-origin-figures/SKILL.md` | 匿名适配原则，不含原作者工程路径或预设图号，输入由当前使用者提供。旧名 `embedded/markov-thesis-origin-figures/` 保留为兼容入口，只做转向，不承载项目内容。 |
 | Origin 桥接 | `embedded/origin-mcp-local/SKILL.md` | 按现有安装探测服务，失败需如实报告。 |
 | Word 原生公式 | `embedded/md-bare-var-to-native-equation/SKILL.md` | 规范数学表达与 OMML 检查。 |
 | DOCX 操作 | `embedded/docx/SKILL.md`、`embedded/officecli/SKILL.md` | 选择当前环境可用工具，保护对象并检查页面。 |
