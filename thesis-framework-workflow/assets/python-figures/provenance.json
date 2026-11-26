@@ -1,0 +1,23 @@
+{
+  "synthetic": true,
+  "backend": "python",
+  "source": "embedded/nature-figure/scripts/plot_templates.py",
+  "template_names": [
+    "paired",
+    "roc",
+    "volcano",
+    "dotplot",
+    "marginal"
+  ],
+  "rendered_outputs": "SVG, PDF and 600 dpi TIFF were created from explicit --demo runs. These PNGs are viewing copies of those actual synthetic TIFF exports.",
+  "visual_review": "Actual exported figures viewed; no claim of manuscript-data validation.",
+  "r_preview": "not_generated_Rscript_unavailable",
+  "files": {
+    "dotplot.png": "a5d638fc386636f62ab555b9ace1e9ffc630fff8f95eddd8294e28c9909a3a66",
+    "marginal.png": "4a8ad9d0faf58a8aae130cce3e4ea3501d479883dc7ca4d0b67e50b3ecdaeb68",
+    "paired.png": "eb5d3718f62af785c990d529f1064e21e4212bf522e84922ca0a80b06813b07b",
+    "roc.png": "c7ec8d9bdc1e5a2882c68bdc0138c01e88cd873df745000a6e40298f3b26f7a9",
+    "templates.png": "1e84bd80fd3e8b95095e7cfe7bf6c6d8fc11ad18012696caa96a59bcd8e3b3ee",
+    "volcano.png": "38cdcd41e100a266b7855263ce912b63068f1aa78ae2e9e44c625415320d1376"
+  }
+}

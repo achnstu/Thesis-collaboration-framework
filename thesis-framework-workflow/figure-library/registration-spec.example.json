@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "custom-figure-id",
+  "title": "用户确认的图型名称",
+  "backend": "Python",
+  "user_confirmed": true,
+  "confirmation_scope": "图型结构和视觉样式，数据与结果另行核验",
+  "data_status": "synthetic",
+  "attribution": "填写代码、参考图及素材的实际来源和许可",
+  "validation": {"status": "pending", "notes": "按实际执行结果填写"},
+  "files": [
+    {"source": "plot.py", "target": "scripts/plot.py", "role": "plotting-source"},
+    {"source": "data.csv", "target": "data/example.csv", "role": "synthetic-data"},
+    {"source": "preview.png", "target": "preview.png", "role": "preview"}
+  ]
+}

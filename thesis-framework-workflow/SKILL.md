@@ -33,6 +33,14 @@ description: 按任务含义自动选择写作、证据、文献、图表、排�
 
 小任务通常由一个模块完成。只在需要时接入其他模块，例如写作使用已确认结果，出现具体数值冲突再做证据核验。图表仅改样式不重做全部统计，排版不顺带重写正文。跨模块改变输入时，交回受影响模块复核。
 
+## 用户自定义图例库
+
+[figure-library/](figure-library/INDEX.md) 是当前用户保存和积累图型的专属区域，包含用户确认的设计、复刻图型、预览、示例数据及复用入口。这里“图例库”指图型与作图配方集合，不仅是图内 legend。
+
+- 已收录 [透视瀑布图](figure-library/perspective-waterfall/guide.md)及[下柱上折线双 Y 轴组合图](figure-library/bar-line-dual-axis/guide.md)，按需选择，不默认套用于所有数据。
+- 用户要求“保存这个图型”“加入我的图例库”时，按 [收录流程](figure-library/INDEX.md#如何继续保存复刻图型)把已确认成果保存在 `figure-library/<自选id>/`，用 `entry.json` 记录来源、数据性质和实际检查范围。现有条目不自动覆盖。
+- 第三方工具与模板在 `embedded/` 维护，尚未适配确认的外部模板不冒充用户原创条目。Python/R 绘图从 [内嵌能力](references/python-r-figures.md)进入，Origin 图仍使用自己的原生入口。
+
 ## 写作时集中加载
 
 先读[写作执行与反向自检](references/writing-review.md)，再从[各部分起草路线](references/writing.md#从研究问题到各部分写法)选择当前目标，阅读对应的详细写法和目标语言规则。接手旧稿或另一个 AI 的工作时，先按[接手续写](references/writing-review.md#写前固定依据)重建写作依据，再落笔。完整成稿先复查实际待交付版本，收到复查结果并处理后才能交付，不以规则已读或复查已发起代替通过。只改一段时读取该段、必要上下文和作者确认样本，不先加载绘图后端、软件预检或协作台账。摘要、结论、结果与公式释义按各自职责组织，不能只做词句替换。
@@ -55,6 +63,6 @@ description: 按任务含义自动选择写作、证据、文献、图表、排�
 
 首次用于一个项目时，提醒作者将 [简短执行规则](references/writing-review.md#接入现有项目) 放入现有标准 `AGENTS.md`，列为项目内高优先级写作与模块约定，并指定完整技能路径。配置好后不重复提醒，不将配置作为本次工作的前置条件。
 
-陌生项目按需读 [学科适配](references/getting-started.md)。工具选择见 [内嵌清单](references/embedded-skills.md)，透视瀑布图有 [专门说明](references/origin-perspective-waterfall.md)。需要在一个画框内组织下部总量柱图、上部时序折线及左右 Y 轴时，使用 [Origin 下柱上折线双 Y 轴组合图](references/origin-bar-line-dual-axis.md)，它提供可迁移脚本、数据清单及合成示例。其他图型按数据与问题选择。模板从 [工作区入口](assets/templates/workspace-entry.md) 按需取用，[模拟项目](examples/worked-example.md)、[协作示例](examples/collaboration-example.md) 和 [匿名经验](references/case-overview.md) 只供参考。
+陌生项目按需读 [学科适配](references/getting-started.md)。工具选择见 [内嵌清单](references/embedded-skills.md)，用户定制和复刻图型集中在 [图例库](figure-library/INDEX.md)，通用 Python/R 图型见 [内嵌绘图能力](references/python-r-figures.md)。其他图型按数据与问题选择。模板从 [工作区入口](assets/templates/workspace-entry.md) 按需取用，[模拟项目](examples/worked-example.md)、[协作示例](examples/collaboration-example.md) 和 [匿名经验](references/case-overview.md) 只供参考。
 
 整目录迁移、脚本执行或分发时读 [兼容说明](references/portability.md)。纯写作可离线完成，无需先检查 Origin、Word 或 Python。项目只指定一个现行技能入口，避免同名副本漂移。不同客户端的自动加载和实际执行仍需核对，包校验不代替内容判断。

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "bar-line-dual-axis",
+  "title": "下柱上折线双 Y 轴组合图",
+  "backend": "Origin",
+  "user_confirmed": true,
+  "confirmation_scope": "用户已确认的定制图型结构。随包合成示例并非真实研究结果。",
+  "data_status": "synthetic",
+  "attribution": "User-customized recipe; native Origin implementation and synthetic examples maintained by this workflow.",
+  "runner": "../../scripts/render_bar_line_dual_axis.py",
+  "manifest": "data/manifest.json",
+  "validation": {
+    "native_render": "previously_saved_and_reopened",
+    "visual_review": "previously_reviewed",
+    "this_update": "resource_registration_only_no_unrelated_Origin_rerender"
+  },
+  "files": [
+    {
+      "file": "data/curves.csv",
+      "role": "synthetic-input",
+      "sha256": "d0f883aebf8faf579d0eba5740c3be395f9104e1b9e8efe68ac1a94898bc5bae"
+    },
+    {
+      "file": "data/manifest.json",
+      "role": "synthetic-input",
+      "sha256": "2072286c534d327e40afadd5d932866e08766411834d0b484e94be11617561c0"
+    },
+    {
+      "file": "data/totals.csv",
+      "role": "synthetic-input",
+      "sha256": "71780047315277f1a0fddcc9e2d499f086f834f817ebb79a0c7613eba34f0819"
+    },
+    {
+      "file": "guide.md",
+      "role": "guide",
+      "sha256": "c1671e4690226771d9545393ad2dd83fe0bbb7399e43a630343c2ce4e5918bc3"
+    },
+    {
+      "file": "preview.png",
+      "role": "preview",
+      "sha256": "366bc255525883b7ed0630d2bed0dac060eae580de9b5429923ec9dff0fc55b0"
+    }
+  ]
+}

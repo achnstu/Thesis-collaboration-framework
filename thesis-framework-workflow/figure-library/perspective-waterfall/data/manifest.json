@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "dataset_label": "Synthetic example",
+  "x_column": "time_s",
+  "y_column": "load_W",
+  "y_scale": 0.001,
+  "x_title": "Time (s)",
+  "y_title": "Load power (kW)",
+  "time_ticks": [
+    0,
+    500,
+    1000,
+    1500,
+    2000
+  ],
+  "series": [
+    {
+      "id": "ep001",
+      "label": "ep001",
+      "file": "ep001.csv",
+      "sha256": "0006880617354963e470ae210cd05fc63f8d4e41b0aff9678ce2941c93a5d627"
+    },
+    {
+      "id": "ep002",
+      "label": "ep002",
+      "file": "ep002.csv",
+      "sha256": "5bb24e2eee854573c9d742208e16dccba4ad11e0ef3469c154bb36475aebdae1"
+    },
+    {
+      "id": "ep003",
+      "label": "ep003",
+      "file": "ep003.csv",
+      "sha256": "266ddfaa4aeccecd26b5afb2d6f7f9ada079fd8e20f0051f5b5dac0d1338e6e1"
+    },
+    {
+      "id": "ep004",
+      "label": "ep004",
+      "file": "ep004.csv",
+      "sha256": "cc7e60120726b3786bfee2836f86661c5a4e4e5a8daf8b9f9104bac14a5858b4"
+    },
+    {
+      "id": "ep005",
+      "label": "ep005",
+      "file": "ep005.csv",
+      "sha256": "68dc0c8ca0f871866a895cda5e719d8047048a8b6aa5f167ff8986e47ac23643"
+    },
+    {
+      "id": "ep006",
+      "label": "ep006",
+      "file": "ep006.csv",
+      "sha256": "2dad8f8b25b4aa8d7661127384174e3d4ab5f84d038c47030c22e2f206f33e02"
+    },
+    {
+      "id": "ep007",
+      "label": "ep007",
+      "file": "ep007.csv",
+      "sha256": "6d5e1a09214b3327b36221c0c691cd8e1bd3444680e63ee59f7f8fc1bc66de50"
+    },
+    {
+      "id": "ep008",
+      "label": "ep008",
+      "file": "ep008.csv",
+      "sha256": "77c734b3370ec6e00103ecbbf9d636c4910a674ba8209820d6e46745495f603f"
+    }
+  ],
+  "annotations": [
+    {
+      "text": "Editable note",
+      "x": 0.75,
+      "y": 0.95,
+      "size_pt": 9,
+      "rotation_deg": 0,
+      "color": "#303840"
+    }
+  ],
+  "fill_transparency_percent": 75
+}

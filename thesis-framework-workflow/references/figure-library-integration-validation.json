@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-26",
+  "updated_in_place": true,
+  "backup_created": false,
+  "custom_library": {
+    "folder": "figure-library",
+    "initial_entries": [
+      "perspective-waterfall",
+      "bar-line-dual-axis"
+    ],
+    "registered_resources_hash_verified": 16,
+    "future_registration_smoke": "passed",
+    "preflight_is_read_only": true,
+    "path_escape_and_unconfirmed_entry_rejected": true,
+    "existing_entry_overwrite_rejected": true
+  },
+  "nature_figure_provenance": "../embedded/nature-figure/PROVENANCE.json",
+  "python_templates_rendered": 5,
+  "original_unit_tests_passed": 22,
+  "r_rendered": false,
+  "r_reason": "Rscript not found through PATH or standard installation discovery",
+  "shared_resources": "relative to containing skill; no original-author runtime required",
+  "same_machine_relocation_passed": true,
+  "other_physical_machine_tested": false,
+  "no_new_origin_render": "reused unchanged native-chart verification; this task registers existing library inputs",
+  "package_links_checked": 491,
+  "private_path_findings": [],
+  "author_review_of_new_python_demos": "not_claimed",
+  "document_review": "completed_one_environment_command_correction_applied_and_locally_rechecked",
+  "publication_checks": {
+    "readme_backend_categories": [
+      "Origin",
+      "Python",
+      "R"
+    ],
+    "native_r_rendered": false,
+    "upstream_files_byte_identical": 42,
+    "upstream_files_adapted": 3,
+    "owned_script_lint_format": "passed",
+    "owned_script_max_cyclomatic_complexity": 14,
+    "upstream_script_runtime_lint": "passed_after_missing_math_import_fix",
+    "upstream_large_files": "preserved third-party implementations and provenance; not refactored solely to meet local file-size convention",
+    "public_csv_byte_checksums": "existing waterfall manifest refreshed against unchanged repository CSV values",
+    "cross_platform_byte_preservation": ".gitattributes disables newline conversion for hashed resources"
+  }
+}

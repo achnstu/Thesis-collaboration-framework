@@ -1,0 +1,10 @@
+Embedded from the user-supplied nature-skills-main archive, nature-figure 2.8.0.
+Upstream: https://github.com/Yuan1z0825/nature-skills
+The source archive and upstream file hashes are recorded in PROVENANCE.json.
+Repository-owned material is distributed under the bundled Apache-2.0 LICENSE.
+Integration notes, portable examples and dependency instructions were added for
+the enclosing thesis workflow. Original paths in examples are not host paths.
+Preexisting figures4papers reference material retains its own rights boundary;
+see assets/figures4papers/THIRD_PARTY_NOTICES.md. No additional figures4papers
+scripts or artwork were imported in this update. Do not infer reuse permission
+from the nature-skills repository license.

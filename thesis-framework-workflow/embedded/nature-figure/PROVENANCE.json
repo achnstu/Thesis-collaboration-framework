@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "source": "nature-skills-main.zip supplied by the user",
+  "archive_sha256": "a3ec0efa6b0890fab492690bd9c08b20f07fd7a5c59519117dba03d4dfc6a23b",
+  "archive_module": "skills/nature-figure",
+  "upstream_manifest_version": "2.8.0",
+  "license": "Apache-2.0 for repository-owned content; third-party examples retain their own terms",
+  "files": [
+    {
+      "file": ".gitignore",
+      "archive_sha256": "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e",
+      "embedded_sha256": "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e",
+      "modified_from_archive": false
+    },
+    {
+      "file": "README.md",
+      "archive_sha256": "ecfb4230aa2dd65dc5c892534d414a3fc74eb3c7d746ee7e414ee165c749d98c",
+      "embedded_sha256": "ecfb4230aa2dd65dc5c892534d414a3fc74eb3c7d746ee7e414ee165c749d98c",
+      "modified_from_archive": false
+    },
+    {
+      "file": "README_EN.md",
+      "archive_sha256": "6b4674bcd5b949dcca8ebda134739c252e4b0d229eca1d58e1474d4284c49a87",
+      "embedded_sha256": "6b4674bcd5b949dcca8ebda134739c252e4b0d229eca1d58e1474d4284c49a87",
+      "modified_from_archive": false
+    },
+    {
+      "file": "SKILL.md",
+      "archive_sha256": "5aefe708a2531c5ddaa8ee74d5155d747e96c0f21a33143d38316b7c5c88ffc4",
+      "embedded_sha256": "86ae42bdc51965e68fe40314849c46b5772d1b6a7a69d8afae9521255aeeafd7",
+      "modified_from_archive": true
+    },
+    {
+      "file": "assets/figures4papers/THIRD_PARTY_NOTICES.md",
+      "archive_sha256": "b0ef9d2fe959468fce4f45472b12ff4d4fc9450201caa42d394823cd4a5e20d5",
+      "embedded_sha256": "b0ef9d2fe959468fce4f45472b12ff4d4fc9450201caa42d394823cd4a5e20d5",
+      "modified_from_archive": false
+    },
+    {
+      "file": "evals/evals.json",
+      "archive_sha256": "3d75ea7f279ca45fe0ed6db3f7110f653c94eb01c9626b4d823a2df22029d01c",
+      "embedded_sha256": "3d75ea7f279ca45fe0ed6db3f7110f653c94eb01c9626b4d823a2df22029d01c",
+      "modified_from_archive": false
+    },
+    {
+      "file": "manifest.yaml",
+      "archive_sha256": "f6cf1e50f55c74e159134edb8ca5a57fd5097b72b37463c7b2612757e01c24be",
+      "embedded_sha256": "f6cf1e50f55c74e159134edb8ca5a57fd5097b72b37463c7b2612757e01c24be",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/ai-graphical-abstract-workflow.md",
+      "archive_sha256": "258c59085ef3eaf28dcda8bf00bab5d3235f0736be1af652911de1af8aa14c4f",
+      "embedded_sha256": "258c59085ef3eaf28dcda8bf00bab5d3235f0736be1af652911de1af8aa14c4f",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/api.md",
+      "archive_sha256": "1ec51840fdc45017735511b1275cada5e09f5d3e7dc44f35b2d8ba052809a4bc",
+      "embedded_sha256": "1ec51840fdc45017735511b1275cada5e09f5d3e7dc44f35b2d8ba052809a4bc",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/asset-adaptation.md",
+      "archive_sha256": "64c4f788962d73beba1bbd919255dffe620de3090579e7ec811e88e557ac4c3d",
+      "embedded_sha256": "64c4f788962d73beba1bbd919255dffe620de3090579e7ec811e88e557ac4c3d",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/backend-selection.md",
+      "archive_sha256": "9ff023b8103da861f2c6e4b8b244a0003120d180ab4fb004c346af5a12343dca",
+      "embedded_sha256": "9ff023b8103da861f2c6e4b8b244a0003120d180ab4fb004c346af5a12343dca",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/chart-types.md",
+      "archive_sha256": "68008a60e0285e840a34973db5f945e88051280ac4dcad8a7eb97882c5384dfa",
+      "embedded_sha256": "68008a60e0285e840a34973db5f945e88051280ac4dcad8a7eb97882c5384dfa",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/common-patterns.md",
+      "archive_sha256": "5f176c70bb846744374a27a342d03761ff9c0a0c7844f87867add3a66c448581",
+      "embedded_sha256": "5f176c70bb846744374a27a342d03761ff9c0a0c7844f87867add3a66c448581",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/demos.md",
+      "archive_sha256": "dc34ab2d1600265f7e03af51afa0d4bda7b235f4cf3d2f73ac791dca8c605cec",
+      "embedded_sha256": "dc34ab2d1600265f7e03af51afa0d4bda7b235f4cf3d2f73ac791dca8c605cec",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/design-theory.md",
+      "archive_sha256": "e8b31da9dec01f552acca6aeffbd06c8dbf53e737d7138075d1f97619c43a47e",
+      "embedded_sha256": "e8b31da9dec01f552acca6aeffbd06c8dbf53e737d7138075d1f97619c43a47e",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/figure-contract.md",
+      "archive_sha256": "db08b51fb080c5fe37f61140a1b7fd31247f90810f3a80cdcf58429a699879df",
+      "embedded_sha256": "db08b51fb080c5fe37f61140a1b7fd31247f90810f3a80cdcf58429a699879df",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/figure-legend-conventions.md",
+      "archive_sha256": "7d00fc1839d5b152b289c8d892e723549be06c38ea75761763108a5ac34303fd",
+      "embedded_sha256": "7d00fc1839d5b152b289c8d892e723549be06c38ea75761763108a5ac34303fd",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/multipanel-evidence-architecture.md",
+      "archive_sha256": "79ca617cc05088d6fcfb065140d0ee036eb849738bb79306964eb9aa3a4ed274",
+      "embedded_sha256": "79ca617cc05088d6fcfb065140d0ee036eb849738bb79306964eb9aa3a4ed274",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/nature-2026-observations.md",
+      "archive_sha256": "1af8250733da77f1d82cc370e2e8d61266352517b1d1ab82ed6c834de8c98272",
+      "embedded_sha256": "1af8250733da77f1d82cc370e2e8d61266352517b1d1ab82ed6c834de8c98272",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/nature-article-requirements.md",
+      "archive_sha256": "d59ebd80a99b2a91d9b0861529044f6242e1430b37fa4d7c73935a40a6a6be33",
+      "embedded_sha256": "d59ebd80a99b2a91d9b0861529044f6242e1430b37fa4d7c73935a40a6a6be33",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/openrouter-image-generation.md",
+      "archive_sha256": "52a26512c9eabd040c95c5c97f6fba9b110cd4be5b41d667d372c489d11526c6",
+      "embedded_sha256": "52a26512c9eabd040c95c5c97f6fba9b110cd4be5b41d667d372c489d11526c6",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/qa-contract.md",
+      "archive_sha256": "4f31375cdb614d74eddb8aa7691c0bdfc8a8f20defcca27ce4a36192308748a8",
+      "embedded_sha256": "4f31375cdb614d74eddb8aa7691c0bdfc8a8f20defcca27ce4a36192308748a8",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/r-template-index.md",
+      "archive_sha256": "0ebbbd4171896b61639d7969a010401d0aa257bafb99783026a1ba32c91ce19e",
+      "embedded_sha256": "0ebbbd4171896b61639d7969a010401d0aa257bafb99783026a1ba32c91ce19e",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/r-workflow.md",
+      "archive_sha256": "99af2cf2d9b715ce009b5fe01034f7d22998276baae1324027b66de5b6e326d4",
+      "embedded_sha256": "99af2cf2d9b715ce009b5fe01034f7d22998276baae1324027b66de5b6e326d4",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/template-catalog.md",
+      "archive_sha256": "f3dfe03d7ad6d004d17cb1f576e39020f55d1aa6d26f115a3be9ce6279e7d244",
+      "embedded_sha256": "f3dfe03d7ad6d004d17cb1f576e39020f55d1aa6d26f115a3be9ce6279e7d244",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/tutorials.md",
+      "archive_sha256": "0fbd92cedc8da312ec4b8655127d61ce2ba68f218b70a346d6716977ab4861d6",
+      "embedded_sha256": "0fbd92cedc8da312ec4b8655127d61ce2ba68f218b70a346d6716977ab4861d6",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/vector-schematic-style-rules.md",
+      "archive_sha256": "fa96f0452b67deded2ce0437dc6bde7bedeae9dd438f18e22525d61953b32ee5",
+      "embedded_sha256": "fa96f0452b67deded2ce0437dc6bde7bedeae9dd438f18e22525d61953b32ee5",
+      "modified_from_archive": false
+    },
+    {
+      "file": "references/vector-schematic-workflow.md",
+      "archive_sha256": "9f96fa703bbe29581e50ddac9756900553b5617f46b4a0b31e8978278fffa329",
+      "embedded_sha256": "9f96fa703bbe29581e50ddac9756900553b5617f46b4a0b31e8978278fffa329",
+      "modified_from_archive": false
+    },
+    {
+      "file": "requirements.txt",
+      "archive_sha256": "e2596dd9f3381fb6280bd18added6c3d0025d954c99a132e3d0bc8d3e8a24d00",
+      "embedded_sha256": "e2596dd9f3381fb6280bd18added6c3d0025d954c99a132e3d0bc8d3e8a24d00",
+      "modified_from_archive": false
+    },
+    {
+      "file": "scripts/audit_figure_collisions.py",
+      "archive_sha256": "4ee745c540355835944f33594833a6a87c44fca8d2232188d6c50a858bc33dcb",
+      "embedded_sha256": "4ee745c540355835944f33594833a6a87c44fca8d2232188d6c50a858bc33dcb",
+      "modified_from_archive": false
+    },
+    {
+      "file": "scripts/audit_panel_alignment.py",
+      "archive_sha256": "4ed2d6afe9db45aaf6ca26aeb264cfc251ae92b49ee9fbf117d926e1956acf56",
+      "embedded_sha256": "4ed2d6afe9db45aaf6ca26aeb264cfc251ae92b49ee9fbf117d926e1956acf56",
+      "modified_from_archive": false
+    },
+    {
+      "file": "scripts/audit_pdf_text.py",
+      "archive_sha256": "6d570cc8efe91825d6da156ac2599b1ef8fb61ce7074ddc9d1646aeb7a02d9d4",
+      "embedded_sha256": "6d570cc8efe91825d6da156ac2599b1ef8fb61ce7074ddc9d1646aeb7a02d9d4",
+      "modified_from_archive": false
+    },
+    {
+      "file": "scripts/audit_svg_schematic.py",
+      "archive_sha256": "a6c37a081c640383214c78c0fe3aee7b28b50403fa8e94ba7c980bf59e1db452",
+      "embedded_sha256": "8a053b091b0ce60cf5efe29c3a7560d410b5f1be233bb434b4e2e74dc04fe694",
+      "modified_from_archive": true
+    },
+    {
+      "file": "scripts/figure_safety.py",
+      "archive_sha256": "0e3e9601aacdafca32ef5fbf1967bdeec0abbf7f564edfd711875432bd47c212",
+      "embedded_sha256": "0e3e9601aacdafca32ef5fbf1967bdeec0abbf7f564edfd711875432bd47c212",
+      "modified_from_archive": false
+    },
+    {
+      "file": "scripts/generate_openrouter_schematic.py",
+      "archive_sha256": "5be6ff8dd0a3df9cfcd95b124ef3f7cc278a3e9d8e335d8c832e6368d3a1244f",
+      "embedded_sha256": "5be6ff8dd0a3df9cfcd95b124ef3f7cc278a3e9d8e335d8c832e6368d3a1244f",
+      "modified_from_archive": false
+    },
+    {
+      "file": "scripts/nature_figure_backend.py",
+      "archive_sha256": "9c3c031a57935443d34e183fb9414160694a1f289c5ee4bc69bdd211fef6b559",
+      "embedded_sha256": "9c3c031a57935443d34e183fb9414160694a1f289c5ee4bc69bdd211fef6b559",
+      "modified_from_archive": false
+    },
+    {
+      "file": "scripts/panel_alignment.R",
+      "archive_sha256": "aeb2db8355e2026e2f2640d25bf18edfa57fb0165ec2c7811f97bb75ba53d26b",
+      "embedded_sha256": "aeb2db8355e2026e2f2640d25bf18edfa57fb0165ec2c7811f97bb75ba53d26b",
+      "modified_from_archive": false
+    },
+    {
+      "file": "scripts/plot_templates.py",
+      "archive_sha256": "e9a8b02768361910758f7188b35dab3e79b94b0783aea662017ef796ee7c736e",
+      "embedded_sha256": "be26f5c6e0eaa4b037d75c54faba7294ebe7a3c775ff2fc084506194d00e855b",
+      "modified_from_archive": true
+    },
+    {
+      "file": "scripts/validate_figure.py",
+      "archive_sha256": "efe65ff2ed243a7c09819bf3093a7cc167f6e829fe31a6f3e6fa0d9c99d72d31",
+      "embedded_sha256": "efe65ff2ed243a7c09819bf3093a7cc167f6e829fe31a6f3e6fa0d9c99d72d31",
+      "modified_from_archive": false
+    },
+    {
+      "file": "static/core/contract.md",
+      "archive_sha256": "a2b6523a48192cf1dff0d194264c5662c832f4d1da6e9e4763ccd98cc0664d4c",
+      "embedded_sha256": "a2b6523a48192cf1dff0d194264c5662c832f4d1da6e9e4763ccd98cc0664d4c",
+      "modified_from_archive": false
+    },
+    {
+      "file": "static/core/stance.md",
+      "archive_sha256": "c7e6860e955a2ee9c24a30dbe88e28741da4eef8290c019e849c6b220ea0f07a",
+      "embedded_sha256": "c7e6860e955a2ee9c24a30dbe88e28741da4eef8290c019e849c6b220ea0f07a",
+      "modified_from_archive": false
+    },
+    {
+      "file": "static/fragments/backend/python.md",
+      "archive_sha256": "1d4809e4ec4ed2d40995d74828732012a6a72c941dfec341745a3118e9312865",
+      "embedded_sha256": "1d4809e4ec4ed2d40995d74828732012a6a72c941dfec341745a3118e9312865",
+      "modified_from_archive": false
+    },
+    {
+      "file": "static/fragments/backend/r.md",
+      "archive_sha256": "4839a77846f0f71a7a44f077ee8fc665460033e7006cb18a884562712d667e2d",
+      "embedded_sha256": "4839a77846f0f71a7a44f077ee8fc665460033e7006cb18a884562712d667e2d",
+      "modified_from_archive": false
+    },
+    {
+      "file": "tests/test_figure_safety.py",
+      "archive_sha256": "aae8e600585bd4429e7ec13a1543e14e41b4a043f3f3d6491c7528e88baf42cb",
+      "embedded_sha256": "aae8e600585bd4429e7ec13a1543e14e41b4a043f3f3d6491c7528e88baf42cb",
+      "modified_from_archive": false
+    },
+    {
+      "file": "tests/test_schematic_url_safety.py",
+      "archive_sha256": "5ed9221941095b4c80d4494a04212c3afce7f5e8f31fccf20068f77503518d45",
+      "embedded_sha256": "5ed9221941095b4c80d4494a04212c3afce7f5e8f31fccf20068f77503518d45",
+      "modified_from_archive": false
+    }
+  ],
+  "shared_dependencies": [
+    "core/nature-results-discussion.md",
+    "journal-formats/nature-machine-intelligence.md"
+  ],
+  "adaptations": "Root routing and local path examples adapted to the containing thesis workflow. No global skill/profile installation.",
+  "new_third_party_figures4papers_assets_imported": false,
+  "preexisting_reference_assets": "retained unchanged; attribution notice supplied",
+  "external_api_execution": "not_requested_not_executed",
+  "upstream": "https://github.com/Yuan1z0825/nature-skills",
+  "local_adaptations": [
+    {
+      "file": "SKILL.md",
+      "reason": "Added containing-workflow routing, relative path and authorization boundary notes; upstream body retained."
+    },
+    {
+      "file": "scripts/plot_templates.py",
+      "reason": "NumPy 1.x fallback to equivalent trapezoidal np.trapz; MathText for log subscripts to avoid Arial missing glyphs; 8 pt volcano axis labels preserve a >=5 pt subscript floor. Five plot families, source columns and trapezoidal AUC definition unchanged."
+    },
+    {
+      "file": "requirements-plotting.txt",
+      "reason": "Added explicit plotting dependencies; upstream requirements.txt covers rendered-PDF audit only."
+    },
+    {
+      "file": "../../examples/nature-r/render_example.R",
+      "reason": "New portable synthetic R example adapted from upstream r-workflow.md and backend/r.md; not an original archive file; R rendering not tested on this host."
+    },
+    {
+      "file": "../../scripts/check_figure_backends.py",
+      "reason": "New read-only local capability probe; does not install or render."
+    },
+    {
+      "file": "scripts/audit_svg_schematic.py",
+      "reason": "Add missing math import required by the existing rotation transform calculation; 90-degree transform smoke passed."
+    }
+  ],
+  "byte_identical_upstream_files": 42,
+  "modified_upstream_files": [
+    "SKILL.md",
+    "scripts/audit_svg_schematic.py",
+    "scripts/plot_templates.py"
+  ],
+  "verification": {
+    "archive_file_hashes_rechecked": true,
+    "license_bytes_match_archive_root": true,
+    "python_template_smokes": {
+      "volcano": "passed",
+      "roc": "passed_after_numpy_1_compatibility_fix",
+      "dotplot": "passed",
+      "marginal": "passed",
+      "paired": "passed"
+    },
+    "upstream_unit_tests": {
+      "run": 22,
+      "passed": 22
+    },
+    "r": {
+      "runtime": "not_discovered_on_host",
+      "execution": "not_run",
+      "example_static_preflight": {
+        "PASS": 19,
+        "WARN": 2,
+        "FAIL": 0
+      },
+      "remaining": "Run native R parse/render and final-size page review on an R-equipped host"
+    },
+    "pdf_collision_audit": "not_run_PyMuPDF_unavailable_in_current_environment",
+    "rendered_volcano_pdf_text_floor": "passed_after_mathtext_and_font_fix",
+    "visual_scope": "Five actual Python template TIFFs viewed in a contact sheet; smoke demonstrations are not manuscript-ready claims",
+    "relocation": {
+      "whole_package_copied": true,
+      "unicode_space_path": true,
+      "unrelated_cwd": true,
+      "stdlib_package_check_without_site_packages": "passed",
+      "python_paired_native_export_from_relocated_source": "passed",
+      "different_physical_computer_tested": false
+    },
+    "svg_rotation_transform_smoke": "passed"
+  }
+}

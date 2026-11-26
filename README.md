@@ -124,28 +124,60 @@ flowchart LR
 
 > 修改后：The same model is used for both datasets. Policies are trained separately for each dataset and evaluated on their respective test sets.
 
-### 科研图表类型
+### 科研图型：Origin、Python、R
 
-包内工作流和 EditaPlot 支持多种图型：
+按研究问题、数据结构和所需交付格式选择工具。下列内容区分可直接运行的模板、按数据适配的绘图配方及当前验证范围。预览使用合成数据，不代表真实研究结果。
 
-- **趋势与关系**：折线图、带误差线的趋势图、散点图和气泡图。
-- **比较与分布**：柱状图、箱线图、小提琴图、直方图、雨云图及原始数据点展示。
-- **矩阵与关联**：热图、混淆矩阵、桑基图和网络关系图。
-- **专业数据**：XPS、XRD、红外光谱、循环伏安及阻抗等图型，以及其他支持的数据图。
+#### Origin：原生可编辑工程
 
-图型的输入要求和支持范围见 [图型与支持情况](thesis-framework-workflow/embedded/editaplot/references/chart-selection.md)。可按任务选用 Origin、Python 等工具，Origin 自动化需要兼容的本机软件及依赖。
+| 图型 | 入口与适用场景 |
+|---|---|
+| 多轨迹透视瀑布图 | [用户定制配方](thesis-framework-workflow/figure-library/perspective-waterfall/guide.md)，展示多条时序与各自持续时间，二维投影形成透视效果 |
+| 下柱上折线双 Y 轴组合图 | [用户定制配方](thesis-framework-workflow/figure-library/bar-line-dual-axis/guide.md)，下部柱图比较总量，上部折线展示时序，两侧 Y 轴分别读数 |
+| 趋势与关系 | 折线、带误差线的趋势、散点、气泡、配对轨迹及多通道信号 |
+| 比较与分布 | 柱图、横向柱图、堆叠柱图、分组箱线图、小提琴图、直方图、雨云图及原始观测点 |
+| 矩阵与模型评价 | 热图、混淆矩阵、ROC/PR、校准曲线、森林图、桑基图及网络关系图 |
+| 光谱与电化学 | XPS、XRD、XAS、FTIR、NMR、DSC、PL、UV–Vis、CV/LSV 及 EIS 等已收录路线 |
 
-### 按截图复刻图型
+两种定制配方已有 Origin 2026 保存、回开和图面检查记录。其他路线来自内嵌 EditaPlot，需按目标主机、输入契约及[支持范围](thesis-framework-workflow/embedded/editaplot/references/chart-selection.md)确认。原生自动化需要 Windows、Origin 和匹配的 Python 依赖。定制配方输出 OPJU、600 dpi PNG、EMF，编辑以 OPJU 为准。
 
-给一张参考截图就能按原图复刻：面板怎么分、轴范围和刻度、图例位置、配色、线型与标记、标注和文字层级都照截图走，数据换成自己的。Origin 和 Python 两条路都支持，Origin 交付可编辑工程和原生图形对象，Python 交付绘图脚本和矢量图。
+| 多轨迹透视瀑布图 | 下柱上折线双 Y 轴组合图 |
+|---|---|
+| ![Origin 合成轨迹透视瀑布图](thesis-framework-workflow/figure-library/perspective-waterfall/preview.png) | ![Origin 下柱上折线双轴合成示例](thesis-framework-workflow/figure-library/bar-line-dual-axis/preview.png) |
 
-复刻只迁移版式和视觉编码，不改统计含义。截图里读不出的数值、误差定义和比较条件由作者补齐或核对，原图数据不直接搬进新图。
+#### Python：CSV 模板与 Matplotlib 绘图
 
-### 透视瀑布图
+已内嵌 [nature-skills](https://github.com/Yuan1z0825/nature-skills) 的 nature-figure 2.8.0 绘图能力。以下五类提供可直接运行的 [CSV 模板脚本](thesis-framework-workflow/embedded/nature-figure/scripts/plot_templates.py)：
 
-下图使用合成轨迹展示多条时序数据及各自持续时间，在 Origin 中以二维投影构建透视效果。制作方法、数据清单和软件要求见 [透视瀑布图说明](thesis-framework-workflow/references/origin-perspective-waterfall.md)。
+| 模板 | 图型与数据要求 |
+|---|---|
+| `volcano` | 火山图，输入效应量与调整后的 p 值 |
+| `roc` | ROC 曲线，输入 FPR 与各模型 TPR，记录梯形积分 AUC |
+| `dotplot` | 矩阵点图，用点面积与颜色表达两项数值 |
+| `marginal` | 散点图及边缘分布，保留二维关系与各自分布 |
+| `paired` | 配对箱线与观测点，检查配对 ID 和条件完整性 |
 
-![使用合成轨迹的透视瀑布图示例](thesis-framework-workflow/assets/waterfall/perspective-example.png)
+五类模板均已用显式合成数据运行并导出 SVG、PDF、600 dpi TIFF。下图为实际导出图的预览汇总。正式绘图应改用用户的 CSV，字段说明见[模板目录](thesis-framework-workflow/embedded/nature-figure/references/template-catalog.md)。
+
+![Python 五类模板的实际合成数据出图](thesis-framework-workflow/assets/python-figures/templates.png)
+
+此外可按 [Matplotlib 配方](thesis-framework-workflow/embedded/nature-figure/references/common-patterns.md)适配柱图、折线、散点、热图、雷达图及多面板，配套源码、绘图区对齐、PDF 字号和碰撞检查。具体依赖及使用顺序见 [Python/R 接入说明](thesis-framework-workflow/references/python-r-figures.md)。
+
+#### R：ggplot2、patchwork、ComplexHeatmap
+
+| 图型与任务 | 内嵌实现方法 |
+|---|---|
+| 常规比较、关系与分布 | ggplot2 的柱图、箱线图、小提琴图、散点/气泡图、折线及配对展示等配方 |
+| 注释热图与专业图型 | ComplexHeatmap/circlize 热图，以及按任务选择的生存曲线、森林图和环形图工作流 |
+| 多面板与导出 | patchwork 组图、原生 R 绘图区测量、对齐 JSON 审查及 SVG/PDF/TIFF 导出 |
+
+R 部分提供 [R 工作流](thesis-framework-workflow/embedded/nature-figure/references/r-workflow.md)、[对齐辅助脚本](thesis-framework-workflow/embedded/nature-figure/scripts/panel_alignment.R)和[可迁移合成示例](thesis-framework-workflow/examples/nature-r/render_example.R)。本轮环境未发现 Rscript，已完成源码静态预检，尚未运行 R 出图。使用者需准备 R 与对应软件包后在目标主机验证，具体专业图型仍需适配数据。
+
+### 用户自定义图例库与截图复刻
+
+[figure-library/](thesis-framework-workflow/figure-library/INDEX.md) 是用户保存已确认设计和复刻图型的区域。现有两种 Origin 图型各有预览、示例数据、复用说明及登记信息，以后可继续收录 Origin、Python、R 或其他工具的图型。
+
+参考截图可用于还原面板、轴范围与刻度、图例、配色、线型、标记和文字层级。正式应用时使用自己的已核验数据，截图无法确定的统计定义、误差和比较条件另行确认。复刻完成并经用户确认后，可通过[收录脚本](thesis-framework-workflow/scripts/register_figure_example.py)保存选定文件并核对哈希。
 
 ### 学术表格
 
@@ -165,6 +197,8 @@ flowchart LR
 
 ## 来源与分发
 
-感谢 [EditaPlot](https://github.com/hang-jin/editaplot)、[Humanizer-zh](https://github.com/op7418/Humanizer-zh)、[lieflat-less-ai-tone](thesis-framework-workflow/embedded/lieflat-less-ai-tone/README.md)、[PaperSpine](https://github.com/WUBING2023/PaperSpine) 及其他创作者。第三方来源和适用范围见 [SOURCES.md](SOURCES.md) 和 [分发说明](thesis-framework-workflow/references/portability.md#分享与第三方许可)。
+感谢 [nature-skills](https://github.com/Yuan1z0825/nature-skills) 作者和贡献者分享 Python/R 科研绘图、布局及图面检查方法。本次内嵌的 nature-figure 保留原许可、来源哈希和兼容性修改记录，详见 [PROVENANCE.json](thesis-framework-workflow/embedded/nature-figure/PROVENANCE.json)。
+
+同时感谢 [EditaPlot](https://github.com/hang-jin/editaplot)、[Humanizer-zh](https://github.com/op7418/Humanizer-zh)、[lieflat-less-ai-tone](thesis-framework-workflow/embedded/lieflat-less-ai-tone/README.md)、[PaperSpine](https://github.com/WUBING2023/PaperSpine) 及其他创作者。第三方来源和适用范围见 [SOURCES.md](SOURCES.md) 和 [分发说明](thesis-framework-workflow/references/portability.md#分享与第三方许可)。
 
 本项目的通用流程、模板与新增示例按仓库许可证分享。内嵌材料适用各自许可证，历史受限快照的分发授权仍需分别核对。

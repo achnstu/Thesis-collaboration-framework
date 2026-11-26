@@ -10,8 +10,10 @@ import struct
 import sys
 from pathlib import Path
 
-from waterfall_inputs import load_manifest
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from bar_line_inputs import load_manifest as load_bar_line_manifest
+from waterfall_inputs import load_manifest
 
 ROOT = Path(__file__).resolve().parents[1]
 TEXT = {".md", ".py", ".ps1", ".sh", ".json", ".yaml", ".yml", ".txt", ".csv", ".toml"}
@@ -25,6 +27,8 @@ PRIVATE = re.compile(
 def markdown_links(path):
     text = path.read_text(encoding="utf-8-sig")
     text = re.sub(r"```.*?```", "", text, flags=re.DOTALL)
+    # Inline Markdown examples describe caller-owned assets, not package links.
+    text = re.sub(r"`+[^`\n]*`+", "", text)
     for target in re.findall(r"\[[^\]]*\]\(([^)]+)\)", text):
         target = target.strip().strip("<>")
         if re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", target) or target.startswith("#"):
@@ -116,6 +120,20 @@ def main():
         "embedded/editaplot/LICENSE",
         "embedded/editaplot/runtime/src/origin_sciplot/origin_backend/session.py",
         "embedded/editaplot/runtime/templates",
+        "figure-library/INDEX.md",
+        "figure-library/perspective-waterfall/entry.json",
+        "figure-library/bar-line-dual-axis/entry.json",
+        "scripts/register_figure_example.py",
+        "scripts/check_figure_backends.py",
+        "references/python-r-figures.md",
+        "embedded/nature-figure/LICENSE",
+        "embedded/nature-figure/PROVENANCE.json",
+        "embedded/nature-figure/manifest.yaml",
+        "embedded/nature-figure/scripts/plot_templates.py",
+        "embedded/nature-figure/scripts/panel_alignment.R",
+        "embedded/nature-figure/static/fragments/backend/python.md",
+        "embedded/nature-figure/static/fragments/backend/r.md",
+        "examples/nature-r/render_example.R",
     ]
     missing = [name for name in required if not (ROOT / name).exists()]
     count, links = check_links()
@@ -131,15 +149,27 @@ def main():
             for p, value in hashes.items()
         )
         config, bars, curves, _ = load_bar_line_manifest(
-            ROOT / "examples/bar-line-dual-axis/manifest.json")
-        bar_line = {"synthetic": config.get("synthetic", False),
-                    "categories": len(bars["values"]), "curves": len(curves),
-                    "points": sum(len(curve["x"]) for curve in curves)}
+            ROOT / "examples/bar-line-dual-axis/manifest.json"
+        )
+        bar_line = {
+            "synthetic": config.get("synthetic", False),
+            "categories": len(bars["values"]),
+            "curves": len(curves),
+            "points": sum(len(curve["x"]) for curve in curves),
+        }
     except (OSError, ValueError, KeyError, TypeError) as exc:
         # Avoid placing source paths or CSV contents in shareable diagnostics.
         sample_error = type(exc).__name__
+    from register_figure_example import inspect_library
+
+    library_error = None
+    try:
+        library = inspect_library(ROOT / "figure-library")
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        library, library_error = [], type(exc).__name__
     report = {
-        "ok": not (missing or links or private or sample_error) and source_hashes_ok,
+        "ok": not (missing or links or private or sample_error or library_error)
+        and source_hashes_ok,
         "missing_resources": missing,
         "relative_links_checked": count,
         "broken_core_links": links,
@@ -153,6 +183,7 @@ def main():
         },
         "capabilities": capabilities(),
         "bar_line_dual_axis_sample": bar_line,
+        "user_figure_library": {"entries": library, "error_type": library_error},
         "origin_started": False,
         "outputs_written": False,
     }

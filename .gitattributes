@@ -1,0 +1,3 @@
+# Provenance and recipe manifests hash the exact resource bytes.
+# Preserve them on Windows, macOS and Linux without checkout-time conversion.
+* -text
