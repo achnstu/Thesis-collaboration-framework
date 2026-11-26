@@ -135,6 +135,12 @@ flowchart LR
 
 图型的输入要求和支持范围见 [图型与支持情况](thesis-framework-workflow/embedded/editaplot/references/chart-selection.md)。可按任务选用 Origin、Python 等工具，Origin 自动化需要兼容的本机软件及依赖。
 
+### 按截图复刻图型
+
+给一张参考截图就能按原图复刻：面板怎么分、轴范围和刻度、图例位置、配色、线型与标记、标注和文字层级都照截图走，数据换成自己的。Origin 和 Python 两条路都支持，Origin 交付可编辑工程和原生图形对象，Python 交付绘图脚本和矢量图。
+
+复刻只迁移版式和视觉编码，不改统计含义。截图里读不出的数值、误差定义和比较条件由作者补齐或核对，原图数据不直接搬进新图。
+
 ### 透视瀑布图
 
 下图使用合成轨迹展示多条时序数据及各自持续时间，在 Origin 中以二维投影构建透视效果。制作方法、数据清单和软件要求见 [透视瀑布图说明](thesis-framework-workflow/references/origin-perspective-waterfall.md)。
